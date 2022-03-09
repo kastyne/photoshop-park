@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
-    <title>Photoshop Park</title>
+    <title>{{ title }}</title>
 </head>
 <body>
     <nav>
-        <h1 class="brand">Photoshop Park</h1>
+        <h1 class="brand">New Photoshop Park</h1>
 
         <input id="bmenub" type="checkbox" class="show">
         <label for="bmenub" class="burger pseudo button">-</label>
@@ -29,7 +29,7 @@
         {% for course in courses %}
             <article class="card">
                 <header>
-                    <img :src="{{course.image}}">
+                    <img src="{{course.image}}">
                 </header>
                 <h1>{{course.name}}</h1>
                 <p>{{course.discription}}</p>
