@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>Photoshop Park</title>
+</head>
+<body>
+    <nav>
+        <h1 class="brand">Photoshop Park</h1>
+
+        <input id="bmenub" type="checkbox" class="show">
+        <label for="bmenub" class="burger pseudo button">-</label>
+
+        <div class="menu">
+            <a class="button" href="courses/">Courses</a>
+            <a class="pseudo button" href="about/">About</a>
+            <a class="pseudo button" href="contact/">Contact Us</a>
+        </div>
+    </nav>
+
+    <main x-data="data" x-init="getCourses()">
+        {% for course in courses %}
+            <article class="card">
+                <header>
+                    <img :src="{{course.image}}">
+                </header>
+                <h1>{{course.name}}</h1>
+>?                <p>{{course.discription}}</p>
+            </article>
+        {% endfor %}
+    </main>
+</body>
+</html>
