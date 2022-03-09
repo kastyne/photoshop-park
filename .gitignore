@@ -1,16 +1,14 @@
-*.code-workspace
-
-# Caroline Project
-.env
+# Editor xml dump
 .code-workspace
 .vscode
 .idea
-.devcontainer
-data
-wip
 
-Dockerfile
+# Data
 identifier.sqlite
+
+# Docker
+.devcontainer
+Dockerfile
 
 # Caches
 __pycache__/
