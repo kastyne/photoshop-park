@@ -25,16 +25,22 @@
         </div>
     </nav>
 
-    <main x-data="data" x-init="getCourses()">
-        {% for course in courses %}
+    {% if course_list %}
+        {% for course in course_list %}
             <article class="card">
                 <header>
-                    <img src="{{course.image}}">
+                    <img src="{{course.image}}" alt="Course thumbnail">
                 </header>
                 <h1>{{course.name}}</h1>
                 <p>{{course.description}}</p>
             </article>
         {% endfor %}
-    </main>
+    {% else %}
+        <article class="card">
+                <h1>No courses right now</h1>
+                <p>Come back later!</p>
+        </article>
+    {% endif %}
+
 </body>
 </html>
