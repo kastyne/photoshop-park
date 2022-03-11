@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # Local apps
+    'photoshoppark',
     'home',
     'database',
     'blog'

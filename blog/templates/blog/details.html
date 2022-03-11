@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base/index.html' %}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
-    <link rel="stylesheet" href="{% static 'blog.css' %}">
+{% block title %} {{article.title}} {% endblock %}
 
-    <title>{{ title }}</title>
-</head>
-<body>
-    <nav>
-        <h1 class="brand">New Photoshop Park</h1>
+{% block content %}
+    <h1>{{article.title}}</h1>
+    <span class="author">By: {{article.authors}}</span>
 
-        <input id="bmenub" type="checkbox" class="show">
-        <label for="bmenub" class="burger pseudo button">-</label>
-
-        <div class="menu">
-            <a class="button" href="courses/">Courses</a>
-            <a class="pseudo button" href="about/">About</a>
-            <a class="pseudo button" href="contact/">Contact Us</a>
-        </div>
-    </nav>
-    <main>
-        <h1>{{object.title}}</h1>
-    </main>
-</body>
-</html>
+    <p>{{article.description}}</p>
+    <hr>
+    <p>{{article.content}}</p>
+{% endblock %}
