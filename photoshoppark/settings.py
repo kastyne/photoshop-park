@@ -9,14 +9,16 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import dotenv
+import os
+from os import path
 from pathlib import Path
-import os, dotenv
+
 
 dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -46,7 +48,7 @@ INSTALLED_APPS = [
     'home',
     'database',
     'blog',
-    'courses'
+    'courses',
 ]
 
 SITE_ID = 1
@@ -67,7 +69,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, "essential", "templates")
+            os.path.join(BASE_DIR, "templates/")
         ],
         'APP_DIRS': True,
         'OPTIONS': {
