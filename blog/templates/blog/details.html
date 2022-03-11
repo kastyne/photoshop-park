@@ -25,22 +25,7 @@
         </div>
     </nav>
     <main>
-        {% if article_list %}
-            {% for article in article_list %}
-                <article class="card"><a class="article_link" href="{{article.slug}}">
-                    <h1>{{article.title}}</h1><br>
-                    <span class="author">By:{{article.authors}}</span>
-                    <footer>
-                        <p>{{article.description}}</p>
-                    </footer>
-                </a></article>
-            {% endfor %}
-        {% else %}
-            <article>
-                <h1>No articles right now</h1>
-                <p>Please come back later!</p>
-            </article>
-        {% endif %}
+        <h1>{{object.title}}</h1>
     </main>
 </body>
 </html>

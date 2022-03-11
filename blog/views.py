@@ -1,24 +1,15 @@
-from django.http import HttpResponse
-from django.template import loader
+from django.views import generic
 from database.models.blog import Article
 
+class ArticleList(generic.ListView):
+    queryset = Article.objects.all().filter(status=1)
+    context_object_name = 'article_list'
+    template_name = 'blog/index.html'
+    
+class DraftList(generic.ListView):
+    queryset = Article.objects.filter(status=0)
+    template_name = 'blog/index.html'
 
-def index(request):
-    article_list = Article.objects.all().filter(status=1)
-
-    template = loader.get_template('blog/index.html')
-
-    context = {
-        'article_list': article_list,
-    }
-    return HttpResponse(template.render(context, request))
-
-def drafts(request):
-    article_list = Article.objects.all().filter(status=0)
-
-    template = loader.get_template('blog/index.html')
-
-    context = {
-        'article_list': article_list,
-    }
-    return HttpResponse(template.render(context, request))
+class ArticleDetails(generic.DetailView):
+    model = Article
+    template_name = 'blog/details.html'

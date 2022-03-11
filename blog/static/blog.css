@@ -1,5 +1,7 @@
 body {    
     margin-bottom: 5vh;
+
+    transition: none;
 }
 
 main {
@@ -22,10 +24,6 @@ main {
     margin: 20px;
 }
 
-
-.card header img {
-    width: 450px;
-    height: 299px;
-
-    margin: 0;
+.card .article_link {
+    color: unset
 }
