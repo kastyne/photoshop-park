@@ -3,7 +3,7 @@
 {% block content %}   
     {% if course_list %}
         {% for course in course_list %}
-            <article class="card"><a class="link" href="{{course.name}}">
+            <article class="card"><a class="link" href="courses/{{course.slug}}">
                 <header>
                     <img src="{{course.image}}" alt="Course thumbnail">
                 </header>

@@ -23,7 +23,13 @@ class Lesson(models.Model):
     authors = models.CharField(max_length=50)
     description = models.CharField(max_length=240)
     created_on = models.DateField(auto_now_add=True)
+    slug = models.CharField(max_length=120)
     content = models.TextField()
 
     def __str__(self):
         return self.name
+    
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Lesson, self).save(*args, **kwargs) 
