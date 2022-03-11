@@ -2,7 +2,11 @@ body {
     margin: 0;
     height: 100vh;
     
-    transition: none;
+    transition: none !important;
+}
+
+nav .brand a {
+    color: unset;
 }
 
 main {

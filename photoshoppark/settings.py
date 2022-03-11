@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'photoshoppark',
     'home',
     'database',
-    'blog'
+    'blog',
+    'courses'
 ]
 
 SITE_ID = 1
