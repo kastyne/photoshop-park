@@ -24,23 +24,23 @@
             <a class="pseudo button" href="contact/">Contact Us</a>
         </div>
     </nav>
-
-    {% if course_list %}
-        {% for course in course_list %}
+    <main>
+        {% if course_list %}
+            {% for course in course_list %}
+                <article class="card">
+                    <header>
+                        <img src="{{course.image}}" alt="Course thumbnail">
+                    </header>
+                    <h1>{{course.name}}</h1>
+                    <p>{{course.description}}</p>
+                </article>
+            {% endfor %}
+        {% else %}
             <article class="card">
-                <header>
-                    <img src="{{course.image}}" alt="Course thumbnail">
-                </header>
-                <h1>{{course.name}}</h1>
-                <p>{{course.description}}</p>
+                    <h1>No courses right now</h1>
+                    <p>Come back later!</p>
             </article>
-        {% endfor %}
-    {% else %}
-        <article class="card">
-                <h1>No courses right now</h1>
-                <p>Come back later!</p>
-        </article>
-    {% endif %}
-
+        {% endif %}
+    </main>
 </body>
 </html>
