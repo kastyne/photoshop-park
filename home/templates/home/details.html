@@ -1,0 +1,11 @@
+{% extends 'base/index.html' %}
+
+{% block title %} {{course.name}} {% endblock %}
+
+{% block content %}
+    <h1>{{course.name}}</h1>
+    <span class="author">By: {{course.authors}}</span>
+
+    <img src="{{course.image}}" alt="Course Image">
+    <p>{{course.description}}</p>
+{% endblock %}

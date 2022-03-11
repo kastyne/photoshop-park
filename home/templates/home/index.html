@@ -3,13 +3,13 @@
 {% block content %}   
     {% if course_list %}
         {% for course in course_list %}
-            <article class="card">
+            <article class="card"><a class="link" href="{{course.name}}">
                 <header>
                     <img src="{{course.image}}" alt="Course thumbnail">
                 </header>
                 <h1>{{course.name}}</h1>
                 <p>{{course.description}}</p>
-            </article>
+            </a></article>
         {% endfor %}
     {% else %}
         <article>

@@ -3,7 +3,7 @@
 {% block content %}
     {% if article_list %}
         {% for article in article_list %}
-            <article class="card"><a class="article_link" href="{{article.slug}}">
+            <article class="card"><a class="link" href="{{article.slug}}">
                 <h1>{{article.title}}</h1><br>
                 <span class="author">By:{{article.authors}}</span>
                 <footer>

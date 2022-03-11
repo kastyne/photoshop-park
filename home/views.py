@@ -1,14 +1,10 @@
-from django.http import HttpResponse
-from django.template import loader
 from database.models.course import Course
+from django.views import generic
 
+class CourseList(generic.ListView):
+    model = Course
+    template_name = 'home/index.html'
 
-def index(request):
-    course_list = Course.objects.all()
-
-    template = loader.get_template('home/index.html')
-
-    context = {
-        'course_list': course_list,
-    }
-    return HttpResponse(template.render(context, request))
+class CourseDetails(generic.DetailView):
+    model = Course
+    template_name = 'home/details.html'

@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from database.models import course, blog
 
 admin.site.register(course.Course)

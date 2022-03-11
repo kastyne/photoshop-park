@@ -1,6 +1,4 @@
-from operator import mod
-from telnetlib import STATUS
-from turtle import title
+from django.template.defaultfilters import slugify
 from django.contrib.syndication.views import Feed
 from django.contrib.auth.models import User
 from django.db import models
@@ -38,11 +36,7 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
-    """
-    @models.permalink
-    def get_absolute_url(self):
-        return ('blog.views.article', (), {
-            'year': self.created_on.year,
-            'month': self.created_on.strftime('%m'),
-            'slug': self.slug})
-    """
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Article, self).save(*args, **kwargs) 
