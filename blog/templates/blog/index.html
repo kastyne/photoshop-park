@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'blog.css' %}">
 
     <title>{{ title }}</title>
 </head>
@@ -25,19 +25,19 @@
         </div>
     </nav>
     <main>
-        {% if course_list %}
-            {% for course in course_list %}
+        {% if article_list %}
+            {% for article in article_list %}
                 <article class="card">
-                    <header>
-                        <img src="{{course.image}}" alt="Course thumbnail">
-                    </header>
-                    <h1>{{course.name}}</h1>
-                    <p>{{course.description}}</p>
+                    <h1>{{article.title}}</h1><br>
+                    <span class="author">By:{{article.authors}}</span>
+                    <footer>
+                        <p>{{article.description}}</p>
+                    </footer>
                 </article>
             {% endfor %}
         {% else %}
             <article>
-                <h1>No courses right now</h1>
+                <h1>No articles right now</h1>
                 <p>Please come back later!</p>
             </article>
         {% endif %}

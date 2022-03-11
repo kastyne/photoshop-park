@@ -34,14 +34,15 @@ class Article(models.Model):
     content = models.TextField()
 
     class Meta:
-        ordering = ['_created-on']
+        ordering = ['-created_on']
 
     def __str__(self):
         return self.title
-
+    """
     @models.permalink
     def get_absolute_url(self):
         return ('blog.views.article', (), {
             'year': self.created_on.year,
             'month': self.created_on.strftime('%m'),
             'slug': self.slug})
+    """
