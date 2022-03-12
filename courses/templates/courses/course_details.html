@@ -5,6 +5,7 @@
 {% block content %}
     <article>
         <h1>{{course.title}}</h1>
+        <img src="{{course.image}}" alt="Course thumbnail">
         <span class="author">By: {{course.authors}}</span>
         <p>{{course.description}}</p>
 
@@ -14,7 +15,7 @@
             <ul>
                 {% for lesson in lessons %}
                     <li>
-                        <h2>{{lesson.title}}</h2>
+                        <a href="/courses/{{course.slug}}/{{lesson.slug}}" class="link"><h2>{{lesson.title}}</h2></a>
                     </li>
                 {% endfor %}
             </ul>

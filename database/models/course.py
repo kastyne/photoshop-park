@@ -25,6 +25,7 @@ class Lesson(models.Model):
     description = models.CharField(max_length=240)
     created_on = models.DateField(auto_now_add=True)
     slug = models.CharField(max_length=120, default="")
+    image = models.URLField()
     content = models.TextField(default="")
 
     def __str__(self):

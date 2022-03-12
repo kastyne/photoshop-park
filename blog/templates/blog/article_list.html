@@ -1,6 +1,9 @@
 {% if article_list %}
 {% for article in article_list %}
     <article class="card"><a class="link" href="/blog/{{article.slug}}">
+        <header>
+            <img src="{{article.image}}" alt="Article thumbnail">
+        </header>
         <h1>{{article.title}}</h1><br>
         <span class="author">By:{{article.authors}}</span>
         <footer>

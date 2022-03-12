@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block title %} {{lesson.title}} {% endblock %}
+
+{% block content %}
+    <article>
+        <h1>{{lesson.title}} | {{lesson.course.title}}</h1>
+        <img src="{{lesson.image}}" alt="Lesson thumbnail">
+        <span class="author">By: {{lesson.authors}}</span>
+        <p>{{lesson.description}}</p>
+
+        <hr>
+        
+        <p>{{lesson.content}}</p>
+
+    </article>
+{% endblock %}

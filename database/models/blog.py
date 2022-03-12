@@ -23,6 +23,7 @@ STATUS = (
 class Article(models.Model):
     title = models.CharField(max_length=120)
     authors = models.CharField(max_length=50)
+    image = models.URLField()
     status = models.IntegerField(choices=STATUS, default=0)
     
     slug = models.SlugField(max_length=240, unique=True)
