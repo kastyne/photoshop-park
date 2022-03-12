@@ -4,9 +4,10 @@
 
 {% block content %}
     <article>
-        <h1>{{lesson.title}} | {{lesson.course.title}}</h1>
-        <img src="{{lesson.image}}" alt="Lesson thumbnail">
-        <span class="author">By: {{lesson.authors}}</span>
+        <section class="hero-image" style="--img: url({{lesson.image}})">
+            <h1>{{lesson.title}}</h1>
+            <span class="author">By: {{lesson.authors}}</span>
+        </section>
         <p>{{lesson.description}}</p>
 
         <hr>
