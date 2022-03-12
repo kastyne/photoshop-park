@@ -5,10 +5,9 @@
 {% block content %}
     <section class="hero-image" style="--img: url({{article.image}})">
         <h1>{{article.title}}</h1>
+        <span class="description">{{article.description}}</span><br>
         <span class="author">By: {{article.authors}}</span>
     </section>
 
-    <p>{{article.description}}</p>
-    <hr>
     <p>{{article.content}}</p>
 {% endblock %}
