@@ -3,32 +3,35 @@ from django.contrib.syndication.views import Feed
 from django.contrib.auth.models import User
 from django.db import models
 
+
 class BlogFeed(Feed):
-    title = "Phototshop Park"
+    title = "Photoshop Park"
     link = "/blog/"
 
-    author_email = "kait@photoshoppark" # change later
+    author_email = "kait@photoshoppark"  # change later
 
     def item_author_name(self, item):
         return item.author
 
     def items(self):
-        return Article.objects.filter(status= 1)
+        return Article.objects.filter(status=1)
+
 
 STATUS = (
     (0, "Draft"),
     (1, "Published")
 )
 
+
 class Article(models.Model):
     title = models.CharField(max_length=120)
-    authors = models.CharField(max_length=50)
-    image = models.URLField()
+    authors = models.CharField(max_length=50, default="Photoshop Park")
+    image = models.URLField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    
+
     slug = models.SlugField(max_length=240, unique=True)
     created_on = models.DateField(auto_now_add=True)
-    
+
     description = models.CharField(max_length=240)
     content = models.TextField()
 
@@ -40,4 +43,4 @@ class Article(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        super(Article, self).save(*args, **kwargs) 
+        super(Article, self).save(*args, **kwargs)
