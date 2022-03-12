@@ -3,17 +3,23 @@
 {% block title %} {{course.title}} {% endblock %}
 
 {% block content %}
-    
-    <h1>{{course.title}}</h1>
-    <span class="author">By: {{course.authors}}</span>
-    <p>{{course.description}}</p>
+    <article>
+        <h1>{{course.title}}</h1>
+        <span class="author">By: {{course.authors}}</span>
+        <p>{{course.description}}</p>
 
-    {% if lessons %}
-        {% for lesson in lessons %}
-            <h2>{{lesson.title}}</h2>
-        {% endfor %}
-    {% else %}
-        <h2>No lessons available now</h2>
-    {% endif %}
+        <hr>
 
+        {% if lessons %}
+            <ul>
+                {% for lesson in lessons %}
+                    <li>
+                        <h2>{{lesson.title}}</h2>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h2>No lessons available now</h2>
+        {% endif %}
+    </article>
 {% endblock %}

@@ -1,7 +1,13 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-    {% include 'blog/article_list.html' %}
-
-    {% include 'courses/course_list.html' %}
+    <h1>Course list:</h1>
+    <section class="flex">
+        {% include 'courses/course_list.html' %}
+    </section>
+    <h1>Blog posts:</h1>
+    <hr>
+    <section class="flex">
+        {% include 'blog/article_list.html' %}
+    </section>
 {% endblock content %}
