@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="shortcut icon" href="{% static 'favicon.webp' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <link rel="stylesheet" href="{% static '/style.css' %}">
 
@@ -17,7 +18,7 @@
 <body>
     <nav>
         
-        <a href="/" class="link brand"><img src="https://cdn.discordapp.com/icons/777207888846389270/7876ad2268fab4b3cd420ac9f314f2e8.webp?size=96" alt="Photoshop Park Logo"><h1>Photoshop Park</h1></a>
+        <a href="/" class="link brand"><img src="{% static 'favicon.webp' %}" alt="Photoshop Park Logo"><h1>Photoshop Park</h1></a>
 
         <input id="bmenub" type="checkbox" class="show">
         <label for="bmenub" class="burger pseudo button">-</label>
