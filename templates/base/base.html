@@ -24,6 +24,7 @@
         <label for="bmenub" class="burger pseudo button">-</label>
 
         <div class="menu">
+            <a class="pseudo button" href="/register">Register</a>
             <a class="button" href="/courses">Courses</a>
             <a class="pseudo button" href="/blog">Blog</a>
             <a class="pseudo button" href="/about">About</a>
@@ -31,6 +32,11 @@
         </div>
     </nav>
     <main>
+        {% if messages %}
+            {% for message in messages %}
+                <p class="messages {{ message.tags }}">{{ message }}</p> <!-- Custom messages depending on message tag for future -->
+            {% endfor %}
+        {% endif %}
         {% block content %}
         {% endblock %}
     </main>
