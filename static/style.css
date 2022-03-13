@@ -11,9 +11,9 @@ body {
 
 main {
     width: 80vw;
-
+    height: calc(100vh - 50px);
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
 
 }
 
@@ -31,7 +31,7 @@ nav {
 }
 
 nav .brand h1 {
-    height: 16px;
+    height: 50px;
     line-height: 100%;
 
     padding: 0;
@@ -45,7 +45,7 @@ nav .brand img {
     display: inline;
     float: left;
 
-    margin-top: 8px;
+    margin-top: 15px;
     margin-left: 20px;
     margin-right: 10px;
 
@@ -62,21 +62,38 @@ nav .menu {
     justify-self: end;
     
 }
-  
-nav .menu li a {
-    color: #000;
-    font-size: 0.9rem;
-    font-weight: 400;
-    text-decoration: none;
-    transition: color 0.3s ease-out;
+
+nav .menu {
+    margin: 0;
+    height: 500px;
 }
   
-.nav-item a:hover {
-    color: #3498db;
+nav .menu li {
+    font-weight: 400;
+    text-decoration: none;
+    transition: 0.3s ease-out;
+
+    height: 50px;
+    line-height: 50px;
+
+    text-align: center;
+}
+  
+nav .menu li:hover {
+    text-decoration: underline;
+}
+
+nav .menu li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav .menu li a:visited {
+    color: black;
 }
 
 .card {
-    max-width: 450px;
+    width: clamp(250px, 50vw, 450px);
     height: 450px;
     margin: 20px;
 
@@ -85,9 +102,15 @@ nav .menu li a {
     align-items: flex-start;
     padding: 15px;
     
-    border: 1px solid grey;
+    border: 1px solid black;
     border-radius: 10px;
     word-wrap: break-word;
+
+    transition: 0.2s ease-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .link {
@@ -103,8 +126,8 @@ nav .menu li a {
 }
 
 .card header img {
-    width: 450px;
-    height: 299px;
+    width: clamp(200px, 50vw, 450px);
+    height: 300px;
 
     margin: 0;
 
@@ -112,7 +135,8 @@ nav .menu li a {
 }
 
 .link {
-    color: unset
+    color: unset;
+    text-decoration: none;
 }
 
 .flex {
@@ -126,7 +150,7 @@ nav .menu li a {
 }
 
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--img);
+  background-image: rgba(0, 0, 0, 0.5), var(--img);
 
   height: 25vh;
 
@@ -200,6 +224,9 @@ nav .menu li a {
 .grad-bar {
     width: 100%;
     height: 5px;
+    margin: 0;
+    padding: 0;
+    border: none;
     background: linear-gradient(45deg, rgba(9,3,103,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     background-size: 400% 400%;
     animation: gradbar 15s ease infinite;
