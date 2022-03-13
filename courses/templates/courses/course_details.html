@@ -6,12 +6,13 @@
     <article>
         <section class="hero-image" style="--img: url({{course.image}})">
             <h1>{{course.title}}</h1>
-            <span class="description" >{{course.description}}</span><br>
             <span class="author">By: {{course.authors}}</span>
         </section>
 
+        <p class="description" >{{course.description}}</p><br>
+
         {% if lessons %}
-            <ul>
+            <ul class="progress-list">
                 {% for lesson in lessons %}
                     <li>
                         <a href="/courses/{{course.slug}}/{{lesson.slug}}" class="link"><h2>{{lesson.title}}</h2></a>

@@ -1,13 +1,11 @@
 body {
-    margin: 0;
-    height: 100vh;
+    margin: 0; 
     
     transition: none !important;
 }
 
 main {
     width: 80vw;
-    height: 100vh;
 
     margin: auto;
     margin-top: 100px;
@@ -77,11 +75,61 @@ nav .brand img {
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
 
-  font-size: 1.5em;
-
+  font-size: larger;
 }
 
 .hero-image h1 {
     padding: 2%;
     padding-bottom: 5px;
+}
+
+.progress-list {
+    counter-reset: step;
+    width: 75%;
+    height: 100%;
+    float: right;
+}
+.progress-list li {
+    list-style-type: none;
+    width: 100%;
+    position: relative;
+}
+
+.progress-list li:before {
+    width: 30px;
+    height: 30px;
+
+    content: counter(step);
+    counter-increment: step;
+    
+    line-height: 30px;
+    border: 2px solid;
+    display: block;
+    text-align: center;
+    
+    margin-left: -15px;
+    border-radius: 50%;
+    background-color: white;
+}
+.progress-list li:after {
+    width: 2px;
+    height: 200%;
+    content: '';
+    position: absolute;
+    top: -100%;
+    z-index: -1;
+    background-color: black;
+}
+
+.progress-list li:first-child:after {
+    content: none;
+}
+
+.progress-list li a h2 {
+    margin-left: 20px;
+}
+
+.description {
+    float: left;
+    width: 20%;
 }
