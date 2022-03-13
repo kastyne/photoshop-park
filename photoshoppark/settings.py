@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'database',
     'blog',
     'courses',
+    'users',
 ]
 
 SITE_ID = 1
