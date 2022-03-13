@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="{% static 'favicon.webp' %}" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic"> -->
     <link rel="stylesheet" href="{% static '/style.css' %}">
 
     {% block head %}
@@ -16,20 +16,18 @@
     <title>Photoshop Park {% block title %} {% endblock %}</title>
 </head>
 <body>
+    <div class="grad-bar"></div>
     <nav>
         
         <a href="/" class="link brand"><img src="{% static 'favicon.webp' %}" alt="Photoshop Park Logo"><h1>Photoshop Park</h1></a>
 
-        <input id="bmenub" type="checkbox" class="show">
-        <label for="bmenub" class="burger pseudo button">-</label>
-
-        <div class="menu">
-            <a class="pseudo button" href="/register">Register</a>
-            <a class="button" href="/courses">Courses</a>
-            <a class="pseudo button" href="/blog">Blog</a>
-            <a class="pseudo button" href="/about">About</a>
-            <a class="pseudo button" href="/contact">Contact Us</a>
-        </div>
+        <ul class="menu">
+            <li><a class="pseudo button" href="/register">Register</a></li>
+            <li><a class="button" href="/courses">Courses</a></li>
+            <li><a class="pseudo button" href="/blog">Blog</a></li>
+            <li><a class="pseudo button" href="/about">About</a></li>
+            <li><a class="pseudo button" href="/contact">Contact Us</a></li>
+        </ul>
     </nav>
     <main>
         {% if messages %}

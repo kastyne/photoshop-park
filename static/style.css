@@ -1,6 +1,11 @@
 body {
     margin: 0; 
-    
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x: hidden;
+
     transition: none !important;
 }
 
@@ -12,10 +17,36 @@ main {
 
 }
 
+nav {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    height: 50px;
+    overflow: hidden;
+
+    width: 100%;
+    position: sticky;
+    top: 5;
+    background-color: #fff;
+}
+
+nav .brand h1 {
+    height: 16px;
+    line-height: 100%;
+
+    padding: 0;
+    width: auto;
+    justify-self: start;
+
+    text-decoration: none;
+}
+
 nav .brand img {
     display: inline;
     float: left;
-    margin-top: 30px;
+
+    margin-top: 8px;
+    margin-left: 20px;
     margin-right: 10px;
 
     width: 35px;
@@ -23,17 +54,47 @@ nav .brand img {
     border-radius: 25%;
 
 }
+  
+nav .menu {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    justify-self: end;
+    
+}
+  
+nav .menu li a {
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease-out;
+}
+  
+.nav-item a:hover {
+    color: #3498db;
+}
 
 .card {
     max-width: 450px;
     height: 450px;
-    display: inline-block;
-
     margin: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    
+    border: 1px solid grey;
+    border-radius: 10px;
+    word-wrap: break-word;
 }
 
-.card .link {
-    color: unset
+.link {
+    color: unset;
+    text-decoration: none;
+
+    height: 100%;
 }
 
 .card header {
@@ -46,6 +107,8 @@ nav .brand img {
     height: 299px;
 
     margin: 0;
+
+    border-radius: 10px;
 }
 
 .link {
@@ -132,4 +195,24 @@ nav .brand img {
 .description {
     float: left;
     width: 20%;
+}
+
+.grad-bar {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(45deg, rgba(9,3,103,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background-size: 400% 400%;
+    animation: gradbar 15s ease infinite;
+}
+
+@keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
