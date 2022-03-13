@@ -64,8 +64,12 @@ nav .menu {
 }
 
 nav .menu {
+    display: flex;
+    justify-content: space-between;
     margin: 0;
+    margin-right: 40px;
     height: 500px;
+    width: clamp(0px, 50vw, 350px);
 }
   
 nav .menu li {
@@ -150,7 +154,7 @@ nav .menu li a:visited {
 }
 
 .hero-image {
-  background-image: rgba(0, 0, 0, 0.5), var(--img);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--img);
 
   height: 25vh;
 
@@ -162,12 +166,14 @@ nav .menu li a:visited {
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
 
-  font-size: larger;
+  font-size: 1.5em;
 }
 
 .hero-image h1 {
     padding: 2%;
     padding-bottom: 5px;
+
+    font-size: 2em;
 }
 
 .progress-list {
