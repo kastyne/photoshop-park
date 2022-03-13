@@ -1,10 +1,10 @@
 {% extends 'base/base.html' %}
-
 {% block title %} Register {% endblock %}
 
 {% block content %}
     <h1>Register your account</h1>
     <p>You will get a free cake!</p>
+    <p>Have an account already? <a href="{% url 'login' %}">Log in</a></p>
 
     <form method="POST">
         {% csrf_token %}
