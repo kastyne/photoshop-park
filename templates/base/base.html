@@ -22,7 +22,12 @@
         <a href="/" class="link brand"><img src="{% static 'favicon.webp' %}" alt="Photoshop Park Logo"><h1>Photoshop Park</h1></a>
 
         <ul class="menu">
-            <li><a class="pseudo button" href="/register">Register</a></li>
+            {% if user.is_authenticated %}
+            <li><a class="pseudo button" href="/logout">Logout</a></li>
+            {% else %}
+            <li><a class="pseudo button" href="/login">Login</a></li>
+            {% endif %}
+
             <li><a class="button" href="/courses">Courses</a></li>
             <li><a class="pseudo button" href="/blog">Blog</a></li>
             <li><a class="pseudo button" href="/about">About</a></li>
