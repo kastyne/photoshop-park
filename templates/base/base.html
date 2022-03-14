@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="{% static 'favicon.webp' %}" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic"> -->
+    <link rel="stylesheet" href="{% static '/skeleton.css' %}">
     <link rel="stylesheet" href="{% static '/style.css' %}">
 
     {% block head %}
@@ -23,15 +23,19 @@
 
         <ul class="menu">
             {% if user.is_authenticated %}
-            <li><a class="pseudo button" href="/logout">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
             {% else %}
-            <li><a class="pseudo button" href="/login">Login</a></li>
+                <li><a href="/login">Login</a></li>
             {% endif %}
 
-            <li><a class="button" href="/courses">Courses</a></li>
-            <li><a class="pseudo button" href="/blog">Blog</a></li>
-            <li><a class="pseudo button" href="/about">About</a></li>
-            <li><a class="pseudo button" href="/contact">Contact Us</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            
+            {% if user.is_staff %}
+                <li><a href="/admin">Admin</a></li>
+            {% endif %}
         </ul>
     </nav>
     <main>

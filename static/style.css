@@ -36,6 +36,9 @@ nav .brand h1 {
     height: 50px;
     line-height: 100%;
 
+    margin-top: 16px;
+    font-size: 32px;
+
     padding: 0;
     width: auto;
     justify-self: start;
@@ -84,10 +87,6 @@ nav .menu li {
 
     text-align: center;
 }
-  
-nav .menu li:hover {
-    text-decoration: underline;
-}
 
 nav .menu li a {
     color: black;
@@ -96,6 +95,11 @@ nav .menu li a {
 
 nav .menu li a:visited {
     color: black;
+}
+
+nav .menu li:hover {
+    text-decoration: underline;
+    color: #0FA0CE !important;
 }
 
 .card {
@@ -159,6 +163,7 @@ nav .menu li a:visited {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--img);
 
   height: 25vh;
+  width: 100%;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -168,23 +173,25 @@ nav .menu li a:visited {
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
 
-  font-size: 1.5em;
+  margin-bottom: 25px;
+
+  font-size: 2vh;
 }
 
 .hero-image h1 {
     padding: 2%;
     padding-bottom: 5px;
 
-    font-size: 2em;
+    font-size: 4vh;
 }
 
 .progress-list {
     counter-reset: step;
     
-    width: clamp(0px, 20%, 550px);
+    width: clamp(0px, 20%, 100%);
     height: 100%;
     
-    float: right;
+    display: inline-block;
 }
 .progress-list li {
     list-style-type: none;
@@ -216,19 +223,16 @@ nav .menu li a:visited {
 
 .progress-list li:after {
     width: 2px;
-    height: 200%;
+    height: 110%;
     content: '';
     position: absolute;
-    top: -100%;
+    top: 0;
     z-index: -1;
+    overflow-y: hidden;
     
     background: var(--gradient);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-}
-
-.progress-list li:first-child:after {
-    content: none;
 }
 
 .progress-list li a h2 {
@@ -240,10 +244,14 @@ nav .menu li a:visited {
 }
 
 .description {
-    float: left;
-    width: 60%;
+    display: inline-block;
+    width: clamp(45vw, 75%, 100%);
+
+    height: 100%;
+    margin-top: -100%;
+    margin-right: 10px;
 }
- 
+
 hr {
     width: 100%;
     height: 5px;

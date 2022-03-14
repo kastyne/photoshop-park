@@ -9,8 +9,10 @@
             <span class="author">By: {{course.authors}}</span>
         </section>
 
-        <p class="description" >{{course.description}}</p><br>
-
+        <p class="description">{{course.description}}</p>
+        
         {% include 'courses/lesson_list.html' %}
+        
+
     </article>
 {% endblock %}
