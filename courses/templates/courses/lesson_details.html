@@ -6,11 +6,14 @@
     <article>
         <section class="hero-image" style="--img: url({{lesson.image}})">
             <h1>{{lesson.title}}</h1>
-            <span class="description">{{lesson.description}}</span><br>
+            <span>{{lesson.description}}</span><br>
             <span class="author">By: {{lesson.authors}}</span>
         </section>
 
-        <p>{{lesson.content}}</p>
+        <p class="description">{{lesson.content}}</p>
 
+        {% with lessons=lesson.course.lessons.all %}
+            {% include 'courses/lesson_list.html' %}
+        {% endwith %}
     </article>
 {% endblock %}

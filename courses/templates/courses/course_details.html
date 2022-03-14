@@ -11,16 +11,6 @@
 
         <p class="description" >{{course.description}}</p><br>
 
-        {% if lessons %}
-            <ul class="progress-list">
-                {% for lesson in lessons %}
-                    <li>
-                        <a href="/courses/{{course.slug}}/{{lesson.slug}}" class="link"><h2>{{lesson.title}}</h2></a>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <h2>No lessons available now</h2>
-        {% endif %}
+        {% include 'courses/lesson_list.html' %}
     </article>
 {% endblock %}
