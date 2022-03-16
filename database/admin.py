@@ -15,4 +15,4 @@ class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'authors')
     list_filter = ('authors', 'status')
     search_fields = ['title', 'content']
-    prepopulated_fields = {'slug': ('title',), 'authors': ('authors',)}
+    prepopulated_fields = {'slug': ('title',)}
