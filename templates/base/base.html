@@ -17,7 +17,7 @@
 </head>
 <body>
     <hr class="gradient">
-    <nav>
+    <nav id="navbar">
         
         <a href="/" class="link brand"><img src="{% static 'favicon.webp' %}" alt="Photoshop Park Logo"><h1>Photoshop Park</h1></a>
 
@@ -50,4 +50,6 @@
         {% block content %}
         {% endblock %}
     </main>
+
+    <script src="{% static 'main.js' %}"></script>
 </body>
