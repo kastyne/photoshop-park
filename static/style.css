@@ -59,22 +59,21 @@ nav .brand img {
     border-radius: 25%;
 
 }
-  
-nav .menu {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    justify-self: end;
-    
+
+nav #hamburger, nav label[for="hamburger"] {
+    display: none;
 }
 
 nav .menu {
+    list-style: none;
+    justify-self: center;
+    
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0;
     margin-right: 40px;
     height: 500px;
-    width: clamp(0px, 50vw, 350px);
+    width: clamp(0px, 750px, 60vw);
 }
   
 nav .menu li {
@@ -99,7 +98,7 @@ nav .menu li a:visited {
 
 nav .menu li:hover {
     text-decoration: underline;
-    color: #0FA0CE !important;
+    color: #0FA0CE;
 }
 
 .card {
@@ -175,24 +174,25 @@ nav .menu li:hover {
 
   margin-bottom: 25px;
 
-  font-size: 2vh;
+  font-size: 25px;
 }
 
 .hero-image h1 {
     padding: 2%;
     padding-bottom: 5px;
 
-    font-size: 4vh;
+    font-size: 50px;
 }
 
 .progress-list {
     counter-reset: step;
     
-    width: clamp(0px, 20%, 100%);
+    width: clamp(20%, 20%, 100%);
     height: 100%;
     
     display: inline-block;
 }
+
 .progress-list li {
     list-style-type: none;
     width: 100%;
@@ -223,7 +223,7 @@ nav .menu li:hover {
 
 .progress-list li:after {
     width: 2px;
-    height: 110%;
+    height: 120%;
     content: '';
     position: absolute;
     top: 0;
@@ -247,8 +247,6 @@ nav .menu li:hover {
     display: inline-block;
     width: clamp(45vw, 75%, 100%);
 
-    height: 100%;
-    margin-top: -100%;
     margin-right: 10px;
 }
 
@@ -276,4 +274,43 @@ hr {
 	100% {
 		background-position: 0% 50%
 	}
+}
+
+@media (max-width: 425px) {
+    .brand h1 {
+        display: none;
+    }
+
+    nav .menu {
+        display: none;
+        height: 100vh;
+    }
+
+    nav .menu li {
+        display: block;
+        width: 100vw;
+        height: 32px;
+    }
+
+    nav label[for="hamburger"] {
+        display: block;
+        position: absolute;
+        right: 10px;
+
+
+        height: 16px;
+        width: 16px;
+    } 
+
+    nav #hamburger:checked {
+        display: none;
+    }
+
+    nav #hamburger:checked ~ label[for="hamburger"] {
+        content: "X";
+    }
+
+    nav #hamburger:checked ~ .menu {
+        display: flex;
+    }
 }
