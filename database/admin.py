@@ -9,10 +9,13 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
 
-
 @admin.register(blog.Article)
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'authors')
     list_filter = ('authors', 'status')
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
+
+@admin.register(blog.Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', )

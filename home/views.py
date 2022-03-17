@@ -1,14 +1,15 @@
 from re import template
+from unicodedata import category
 from database.models import course, blog
 from django.shortcuts import render
 
 def homepage(request):
     course_list = course.Course.objects.all()
-    article_list = blog.Article.objects.filter(status=1)
+    categories = blog.Category.objects.all()
 
     return render(request, 'home/homepage.html', {
         'course_list': course_list,
-        'article_list': article_list,
+        'categories': categories,
     })
 
 def about(request):
