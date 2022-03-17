@@ -8,7 +8,7 @@ class Course(models.Model):
     authors = models.CharField(max_length=120)
     description = models.CharField(max_length=240)
     slug = models.CharField(max_length=120, default="")
-    image = models.URLField()
+    image = models.URLField(blank=True)
 
     def __str__(self):
         return self.title
@@ -25,7 +25,7 @@ class Lesson(models.Model):
     description = models.CharField(max_length=240)
     created_on = models.DateField(auto_now_add=True)
     slug = models.CharField(max_length=120, default="")
-    image = models.URLField()
+    image = models.URLField(blank=True)
     content = models.TextField(default="")
 
     def __str__(self):
