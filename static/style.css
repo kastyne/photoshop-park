@@ -139,10 +139,10 @@ nav .menu li:hover {
 .card header img {
     width: clamp(200px, 50vw, 450px);
     height: 300px;
-
     margin: 0;
-
     border-radius: 10px;
+
+    object-fit: cover;
 }
 
 .link {
