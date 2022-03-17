@@ -23,6 +23,9 @@ class LessonDetails(generic.base.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['lesson'] = Course.objects.get(slug=kwargs['course']).lessons.get(slug=kwargs['lesson'])
+        current_course = Course.objects.get(slug=kwargs['course'])
+
+        context['lesson'] = current_course.lessons.get(slug=kwargs['lesson'])
+        context['course'] = current_course
 
         return context
