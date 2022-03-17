@@ -25,7 +25,6 @@ STATUS = (
 
 class Article(models.Model):
     title = models.CharField(max_length=120)
-    # authors = models.CharField(max_length=50, default="Photoshop Park")
     authors = models.ForeignKey(User, on_delete=models.CASCADE)
     # publications = models.ManyToManyField(Publication)
 

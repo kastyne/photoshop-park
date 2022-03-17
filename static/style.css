@@ -145,6 +145,10 @@ nav .menu li:hover {
     object-fit: cover;
 }
 
+.card h1 {
+    margin-bottom: 0px;
+}
+
 .link {
     color: unset;
     text-decoration: none;
@@ -179,11 +183,17 @@ nav .menu li:hover {
   font-size: 25px;
 }
 
-.hero-image h1 {
-    padding: 2%;
-    padding-bottom: 5px;
+.hero-image .content {
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-    font-size: 50px;
+.article-content {
+    width: 100%;
+    word-wrap: break-word;
 }
 
 .progress-list {
