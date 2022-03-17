@@ -24,12 +24,16 @@ nav {
     grid-template-columns: 1fr 3fr;
     align-items: center;
     height: 50px;
+
     overflow: hidden;
+    overflow-y: visible;
 
     width: 100%;
     position: sticky;
     top: 5px;
     background-color: #fff;
+
+    z-index: 1;
 
     transition: .1s ease-in;
 }
@@ -76,9 +80,12 @@ nav .menu {
     margin-right: 40px;
     height: 500px;
     width: clamp(0px, 750px, 60vw);
+
+    overflow-y: visible;
 }
   
 nav .menu li {
+    display: block;
     font-weight: 400;
     text-decoration: none;
     transition: 0.3s ease-out;
@@ -304,6 +311,7 @@ hr.gradient {
 
     nav .menu li {
         display: block;
+
         width: 100vw;
         height: 32px;
     }
@@ -327,6 +335,6 @@ hr.gradient {
     }
 
     nav #hamburger:checked ~ .menu {
-        display: flex;
-    }
+        display: block;
+    }    
 }
