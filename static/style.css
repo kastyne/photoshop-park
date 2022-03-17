@@ -208,8 +208,10 @@ nav .menu li:hover {
     
     width: clamp(20%, 20%, 100%);
     height: 100%;
+    margin-bottom: 50px;
     
-    display: inline-block;
+    display: block;
+    float: left;
 }
 
 .progress-list li {
@@ -263,9 +265,10 @@ nav .menu li:hover {
 }
 
 .description {
-    display: inline-block;
+    display: block;
     width: clamp(45vw, 75%, 100%);
 
+    float: right;
     margin-right: 10px;
 }
 
@@ -300,6 +303,11 @@ hr.gradient {
 }
 
 @media (max-width: 425px) {
+    .description, .progress-list {
+        float: none;
+        width: 100%;
+    }
+
     .brand h1 {
         display: none;
     }
