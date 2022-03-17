@@ -275,7 +275,7 @@ nav .menu li:hover {
 hr {
     width: 100%;
     height: 5px;
-    margin: 25px;
+    margin: 25px 0px;
     padding: 0;
     border: none;
 }
