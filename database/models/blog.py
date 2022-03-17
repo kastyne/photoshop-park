@@ -1,7 +1,7 @@
 from django.template.defaultfilters import slugify
 from django.contrib.syndication.views import Feed
-from django.contrib.auth.models import User
 from django.db import models
+from database.models.user import PsUser
 
 
 class BlogFeed(Feed):
@@ -22,6 +22,7 @@ STATUS = (
     (1, "Published")
 )
 
+
 class Category(models.Model):
     name = models.CharField(max_length=120)
 
@@ -29,11 +30,12 @@ class Category(models.Model):
 def get_default_category():
     return Category.objects.get_or_create(name="Uncategorized")[0].id
 
+
 class Article(models.Model):
     title = models.CharField(max_length=120)
-    authors = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, default=get_default_category, related_name="articles")
-    # publications = models.ManyToManyField(Publication)
+    authors = models.ForeignKey(PsUser, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, default=get_default_category,
+                                 related_name="articles")
 
     image = models.URLField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)

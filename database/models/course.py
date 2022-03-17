@@ -1,6 +1,6 @@
-from django.template.defaultfilters import slugify
-from django.contrib.auth.models import User
 from django.db import models
+from django.template.defaultfilters import slugify
+from database.models.user import PsUser as User
 
 
 class Course(models.Model):
