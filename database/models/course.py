@@ -19,7 +19,7 @@ class Course(models.Model):
 
 
 class Lesson(models.Model):
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="lessons")
+    course = models.ManyToManyField(Course)
     title = models.CharField(max_length=120, default="")
     authors = models.ForeignKey(User, on_delete=models.CASCADE)
     description = models.CharField(max_length=240)
