@@ -1,10 +1,10 @@
 from django.views import generic
-from database.models.blog import Article
+from database.models.blog import Article, Category
 
 
 class ArticleList(generic.ListView):
-    queryset = Article.objects.filter(status=1)
-    context_object_name = 'article_list'
+    queryset = Category.objects.all()
+    context_object_name = 'categories'
     template_name = 'blog/index.html'
 
 

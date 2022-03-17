@@ -1,16 +1,16 @@
 {% if article_list %}
-{% for article in article_list %}
-    <article class="card"><a class="link" href="/blog/{{article.slug}}">
-        <header>
-            <img src="{{article.image}}" alt="Article thumbnail">
-        </header>
-        <h1>{{article.title}}</h1>
-        <span class="author">By:{{article.authors}}</span>
-        <footer>
-            <p>{{article.description}}</p>
-        </footer>
-    </a></article>
-{% endfor %}
+    {% for article in article_list %}
+        <article class="card"><a class="link" href="/blog/{{article.slug}}">
+            <header>
+                <img src="{{article.image}}" alt="Article thumbnail">
+            </header>
+            <h1>{{article.title}}</h1>
+            <span class="author">By:{{article.authors}}</span>
+            <footer>
+                <p>{{article.description}}</p>
+            </footer>
+        </a></article>
+    {% endfor %}
 {% else %}
 <article>
     <h1>No articles right now</h1>

@@ -22,10 +22,17 @@ STATUS = (
     (1, "Published")
 )
 
+class Category(models.Model):
+    name = models.CharField(max_length=120)
+
+
+def get_default_category():
+    return Category.objects.get_or_create(name="Uncategorized")[0].id
 
 class Article(models.Model):
     title = models.CharField(max_length=120)
     authors = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, default=get_default_category, related_name="articles")
     # publications = models.ManyToManyField(Publication)
 
     image = models.URLField(blank=True)

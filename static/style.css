@@ -187,7 +187,7 @@ nav .menu li:hover {
 
   margin-bottom: 25px;
 
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .hero-image .content {
@@ -275,13 +275,13 @@ nav .menu li:hover {
 hr {
     width: 100%;
     height: 5px;
-    margin: 0;
+    margin: 25px;
     padding: 0;
     border: none;
 }
 
-hr.gradient {
-    position: fixed; top: 0px; z-index: 2;
+hr#topbar {
+    position: fixed; top: 0px; z-index: 2; margin: 0;
 }
 
 .gradient {
