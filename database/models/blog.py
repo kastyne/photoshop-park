@@ -1,7 +1,7 @@
 from django.template.defaultfilters import slugify
 from django.contrib.syndication.views import Feed
-from django.db import models
 from database.models.user import PsUser
+from django.db import models
 
 
 class BlogFeed(Feed):
