@@ -24,14 +24,14 @@ STATUS = (
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=120)
+    title = models.CharField(max_length=120)
 
     class Meta:
         verbose_name_plural = "Categories"
 
 
 def get_default_category():
-    return Category.objects.get_or_create(name="Uncategorized")[0].id
+    return Category.objects.get_or_create(title="Uncategorized")[0].id
 
 
 class Article(models.Model):

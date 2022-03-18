@@ -1,0 +1,16 @@
+{% if art_list %}
+    {% for piece in art_list %}
+        <article class="card"><a class="link" href="/art/{{piece.slug}}">
+            <header>
+                <img src="{{piece.image}}" alt="Art Piece">
+            </header>
+            <h1>{{piece.title}}</h1>
+            <span class="author">By:{{article.authors}}</span>
+        </a></article>
+    {% endfor %}
+{% else %}
+<article>
+    <h1>No artwork right now</h1>
+    <p>Please come back later!</p>
+</article>
+{% endif %}

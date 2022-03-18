@@ -1,5 +1,6 @@
+from csv import list_dialects
 from django.contrib import admin
-from database.models import course, blog, user
+from database.models import course, blog, user, artwork
 
 
 @admin.register(course.Course, course.Lesson)
@@ -20,8 +21,11 @@ class BlogAdmin(admin.ModelAdmin):
 
 @admin.register(blog.Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('title', )
 
+@admin.register(artwork.Artwork)
+class ArtworkAdmin(admin.ModelAdmin):
+    list_display = ('title', )
 
 @admin.register(user.PsUser)
 class PsUserAdmin(admin.ModelAdmin):
