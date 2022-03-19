@@ -1,7 +1,5 @@
-from csv import list_dialects
-from django.contrib import admin
 from database.models import course, blog, user, artwork
-
+from django.contrib import admin
 
 @admin.register(course.Course, course.Lesson)
 class CourseAdmin(admin.ModelAdmin):
@@ -10,7 +8,6 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
 
-
 @admin.register(blog.Article)
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'authors')
@@ -18,13 +15,8 @@ class BlogAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
 
-
-@admin.register(blog.Category)
+@admin.register(blog.Category, artwork.Artwork)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('title', )
-
-@admin.register(artwork.Artwork)
-class ArtworkAdmin(admin.ModelAdmin):
     list_display = ('title', )
 
 @admin.register(user.PsUser)
