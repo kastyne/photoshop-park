@@ -34,3 +34,9 @@ class Lesson(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Lesson, self).save(*args, **kwargs)
+
+class Enrollment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="courses")
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+
+    progress = models.IntegerField()
