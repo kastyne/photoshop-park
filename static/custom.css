@@ -1,0 +1,64 @@
+/**********
+ - Global -
+**********/
+main {
+    width: 80vw;
+    height: calc(100vh - 50px);
+    margin: auto;
+    margin-top: 50px;
+
+}
+
+
+/**************************
+ - Custom Featured Cards -
+***************************/
+
+
+.featured-card {
+    max-width: 100%;
+    background-color: #FFF;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+
+}
+
+.featured-card img {
+    filter: grayscale(15%);
+}
+
+.featured-card .featured-name {
+    position: absolute;
+    left: 2rem;
+    bottom: 4rem;
+    font-size: 3rem;
+    color: #FFF;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    transition: all linear .25s;
+}
+
+.featured-card:hover img {
+    filter: none;
+}
+
+.featured-card:hover .featured-name {
+    bottom: 5rem;
+}
+
+.full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
