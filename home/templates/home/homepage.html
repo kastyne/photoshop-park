@@ -1,19 +1,356 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-    <h1>Featured Art</h1>
-    <section class="flex">
-        {% include 'artwork/art_list.html' %}
-    </section>
 
-    <hr class="gradient">
+<!-- for building purposes only -->
+<div class="contanier">
+    <div class="jumbotron">
+        <div class="container text-start ">
 
-    <h1>Course list:</h1>
-    <section class="flex">
-        {% include 'courses/course_list.html' %}
-    </section>
-    
-    <hr class="gradient">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="h1">Start Learning With</h1>
+                    <p class="lead">The World's friendliest Photoshop community</p>
+                    <span class="text-center d-inline-block">
+                        <a class="btn btn-primary rounded-pill btn-lg w-100" href="#" role="button">JOIN FOR FREE</a>
+                        <p class="text-muted">Really, it's free, and community driven</p>
+                    </span>
 
-    {% include 'blog/category_list.html' %}
+                </div>
+
+                <div class="col-lg-6 align-items-center d-flex">
+                    <div class="featured-card border-0 rounded-0"><img
+                            src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                            class="img img-responsive">
+                        <div class="featured-name">Example User 69</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="popular-categories">
+
+        <div class="row">
+
+            <h2 class="h2 text-center py-5">Popular Categories</h2>
+
+            <div class="col-8">
+
+                <div class="card border-0 rounded-0">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" style="height: 20.6rem"
+                        class="img" alt="..."> <!-- the inline style is a temp solution -->
+                    <div class="card-body">
+                        <h5 class="mb-0 text-uppercase fw-bold">Theory of Design</h5>
+                        <p class="text-muted">10 courses</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+
+                <div class="card border-0 rounded-0">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="mb-0 text-uppercase fw-bold">Retouching</h5>
+                        <p class="text-muted">32 courses</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+
+                <div class="card border-0 rounded-0">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="mb-0 text-uppercase fw-bold">Photoshop Fundamentals</h5>
+                        <p class="text-muted">4 courses</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+
+                <div class="card border-0 rounded-0">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="mb-0 text-uppercase fw-bold">You saw this on Instagram</h5>
+                        <p class="text-muted">67 courses</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+
+                <div class="card border-0 rounded-0">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="mb-0 text-uppercase fw-bold">Compositing</h5>
+                        <p class="text-muted">7 courses</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="discord full-bleed bg-info">
+        <div class="container text-start">
+
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="h1">Join Our Discord</h1>
+                    <p class="lead">Make friends, help others, Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quidem incidunt culpa exercitationem iure architecto sunt vitae quasi cum, </p>
+
+                    <a class="btn btn-primary rounded-pill btn-lg w-50" href="#" role="button">JOIN SERVER</a>
+                    </span>
+
+                </div>
+
+                <div class="col-lg-6 align-items-center d-flex">
+                    <div class="featured-card border-0 rounded-0"><img
+                            src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                            class="img img-responsive"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="recent-tutorials">
+        <div class="row pb-5">
+
+            <h2 class="h2 text-center py-5">Recent Tutorials</h2>
+
+            <div class="col-3">
+
+                <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase fw-bold">Retouching</h5>
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum ratione, possimus
+                            repudiandae error tempore dolores adipisci neque consectetur ex, exercitationem, autem
+                            labore! Optio, modi ducimus aut culpa fugiat nostrum harum!
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                                    class="icon rounded-pill" alt="...">
+                                <div class="ms-2 c-details">
+                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">1 day ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-3">
+
+                <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase fw-bold">Retouching</h5>
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet reiciendis obcaecati, non nihil!</p>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                                    class="icon rounded-pill" alt="...">
+                                <div class="ms-2 c-details">
+                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">02 Apr 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-3">
+
+                <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase fw-bold">Retouching</h5>
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, aliquam. Sint harum optio at
+                            rae doloribus est, atque quisquam repellendus modi excepturi fuga! Ratione, sint magnam!</p>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                                    class="icon rounded-pill" alt="...">
+                                <div class="ms-2 c-details">
+                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">17 Feb 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-3">
+
+                <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase fw-bold">Photoshop Fundamentals</h5>
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti uis molestias facilis?
+                            Veniam eligendi esse fugit magni ullam quas sequi?</p>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                                    class="icon rounded-pill" alt="...">
+                                <div class="ms-2 c-details">
+                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">13 Feb 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row pb-5">
+
+            <div class="col-3">
+
+                <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase fw-bold">You saw this on Instagram</h5>
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et velit libero voluptatum aperiam
+                            similique porro quae Enim incidunt minus aliquid et.</p>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                                    class="icon rounded-pill" alt="...">
+                                <div class="ms-2 c-details">
+                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">04 May 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-3">
+
+                <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase fw-bold">Compositing</h5>
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum obcaecati dolore eveniet,
+                            ssumenda reiciendis nesciunt adipisci sed dolorum vitae officiis labore, itaque cupiditate
+                            laudantium architecto nihil nemo minima minus!</p>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                                    class="icon rounded-pill" alt="...">
+                                <div class="ms-2 c-details">
+                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">06 Jun 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-3">
+
+                <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase fw-bold">You saw this on Instagram</h5>
+                        <p class="text-muted">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sapiente eos officia,
+                            dolorum quis ratione optio placeat nt eligendi totam ad ullam, culpa quia fuga quae. Quasi.
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                                    class="icon rounded-pill" alt="...">
+                                <div class="ms-2 c-details">
+                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">01 Feb 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-3">
+
+                <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase fw-bold">Compositing</h5>
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolorupiditate amet
+                            architecto minima, minus sequi temporibus fugiat aut optio dolores quasi ipsa harum quo.
+                            Optio, quo possimus.</p>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                                    class="icon rounded-pill" alt="...">
+                                <div class="ms-2 c-details">
+                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">24 May 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div> <!-- END OF container -->
+
+
+
+
+
+
+<!-- END OF for building purposes only -->
+
+
+
+
+
+
+<!-- {% include 'artwork/art_list.html' %}  -->
+
+
+
+
+
+
+<!-- <h1>Course list:</h1>
+<section class="flex">
+    {% include 'courses/course_list.html' %}  
+</section>  -->
+
+
+{% include 'blog/category_list.html' %}
 {% endblock content %}
