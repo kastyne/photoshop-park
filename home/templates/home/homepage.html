@@ -4,6 +4,7 @@
 
 <!-- for building purposes only -->
 <div class="contanier">
+    
     <div class="jumbotron">
         <div class="container text-start ">
 
@@ -32,72 +33,8 @@
 
     <div class="popular-categories">
 
-        <div class="row">
-
-            <h2 class="h2 text-center py-5">Popular Categories</h2>
-
-            <div class="col-8">
-
-                <div class="card border-0 rounded-0">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" style="height: 20.6rem"
-                        class="img" alt="..."> <!-- the inline style is a temp solution -->
-                    <div class="card-body">
-                        <h5 class="mb-0 text-uppercase fw-bold">Theory of Design</h5>
-                        <p class="text-muted">10 courses</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-4">
-
-                <div class="card border-0 rounded-0">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="mb-0 text-uppercase fw-bold">Retouching</h5>
-                        <p class="text-muted">32 courses</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-4">
-
-                <div class="card border-0 rounded-0">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="mb-0 text-uppercase fw-bold">Photoshop Fundamentals</h5>
-                        <p class="text-muted">4 courses</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-4">
-
-                <div class="card border-0 rounded-0">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="mb-0 text-uppercase fw-bold">You saw this on Instagram</h5>
-                        <p class="text-muted">67 courses</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-4">
-
-                <div class="card border-0 rounded-0">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="mb-0 text-uppercase fw-bold">Compositing</h5>
-                        <p class="text-muted">7 courses</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
+        {% include 'blog/category_list.html' %}
+        
     </div>
 
     <div class="discord full-bleed bg-info">
@@ -111,7 +48,6 @@
 
                     <a class="btn btn-primary rounded-pill btn-lg w-50" href="#" role="button">JOIN SERVER</a>
                     </span>
-
                 </div>
 
                 <div class="col-lg-6 align-items-center d-flex">
@@ -119,6 +55,7 @@
                             src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
                             class="img img-responsive"></div>
                 </div>
+            
             </div>
 
         </div>
@@ -350,7 +287,4 @@
 <section class="flex">
     {% include 'courses/course_list.html' %}  
 </section>  -->
-
-
-{% include 'blog/category_list.html' %}
 {% endblock content %}

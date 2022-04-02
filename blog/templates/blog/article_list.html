@@ -1,19 +1,26 @@
 {% if article_list %}
-    {% for article in article_list %}
-        <article class="card"><a class="link" href="/blog/{{article.slug}}">
-            <header>
-                <img src="{{article.image}}" alt="Article thumbnail">
-            </header>
-            <h1>{{article.title}}</h1>
-            <span class="author">By:{{article.authors}}</span>
-            <footer>
-                <p>{{article.description}}</p>
-            </footer>
-        </a></article>
-    {% endfor %}
-{% else %}
-<article>
-    <h1>No articles right now</h1>
-    <p>Please come back later!</p>
-</article>
+        {% for article in article_list %}
+            {% if forloop.counter <= 2 %}
+                <div class="col-6">
+                    <div class="card border-0 rounded-0">
+                        <img src="{{article.image}}" style="height: 20.6rem" class="img"> 
+                        <div class="card-body">
+                            <h5 class="mb-0 text-uppercase fw-bold">{{article.title}}</h5>
+                            <p class="text-muted">{{article.description}}</p>
+                            <a class="stretched-link" href="/blog/{{article.slug}}"></a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-4">
+                    <div class="card border-0 rounded-0">
+                        <img src="{{article.image}}" style="height: 20.6rem" class="img"> 
+                        <div class="card-body">
+                            <h5 class="mb-0 text-uppercase fw-bold">{{article.title}}</h5>
+                            <p class="text-muted">{{article.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
 {% endif %}

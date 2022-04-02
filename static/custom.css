@@ -62,3 +62,37 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+/******************
+ - Gradient Bars -
+******************/
+
+hr {
+    width: 100%;
+    height: 5px;
+    margin: 25px 0px;
+    padding: 0;
+    border: none;
+}
+
+hr#topbar {
+    position: fixed; top: 0px; z-index: 2; margin: 0;
+}
+
+.gradient {
+    background: var(--gradient);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}

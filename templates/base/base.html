@@ -18,29 +18,30 @@
 </head>
 <body>
     <hr class="gradient" id="topbar">
-    <nav id="navbar">
-        
-        <a href="/" class="link brand"><img src="{% static 'favicon.webp' %}" alt="Photoshop Park Logo"><h1>Photoshop Park</h1></a>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="/" class="nav-brand">
+                <img src="{% static 'favicon.webp' %}" alt="" width="30" height="30" class="d-inline-block">
+                Photoshop Park
+            </a>
 
-        <input type="checkbox" id="hamburger">
-        <label for="hamburger">&#9776;</label>
-        
-        <ul class="menu">
-            {% if user.is_authenticated %}
-                <li><a href="/profile">Profile</a></li>
-            {% else %}
-                <li><a href="/login">Login</a></li>
-            {% endif %}
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+                {% else %}
+                    <li><a href="/login">Login</a></li>
+                {% endif %}
 
-            <li><a href="/courses">Courses</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-            
-            {% if user.is_staff %}
-                <li><a href="/admin">Admin</a></li>
-            {% endif %}
-        </ul>
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/courses">Courses</a></li>
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/blog">Blog</a></li>
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/contact">Contact Us</a></li>
+
+                {% if user.is_staff %}
+                    <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
+                {% endif %}
+            </ul>
+        </div>
     </nav>
     <main>
         {% if messages %}
@@ -48,6 +49,7 @@
                 <p class="messages {{ message.tags }}">{{ message }}</p> <!-- Custom messages depending on message tag for future -->
             {% endfor %}
         {% endif %}
+
         {% block content %}
         {% endblock %}
     </main>
