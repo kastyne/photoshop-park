@@ -1,16 +1,24 @@
 {% if course_list %}
     {% for course in course_list %}
-        <article class="card"><a class="link" href="/courses/{{course.slug}}">
-            <header>
-                <img src="{{course.image}}" alt="Course thumbnail">
-            </header>
-            <h1>{{course.title}}</h1>
-            <p>{{course.description}}</p>
-        </a></article>
-    {% endfor %}
-{% else %}
-    <article>
-        <h1>No courses right now</h1>
-        <p>Please come back later!</p>
-    </article>
+        <div class="card col-3 m-3">
+            <img src="{{course.image}}" class="img">
+            <div class="card-body">
+                <h5 class="card-title text-uppercase fw-bold">{{course.title}}</h5>
+                <p class="text-muted">{{course.description}}</p>
+                <!-- <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center">
+                        <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                            class="icon rounded-pill" alt="...">
+                        <div class="ms-2 c-details">
+                            <span class="text-muted">Written By:</span> 
+                            <h6 class="mb-0 fw-bold">{{course.authors}}</h6>
+                        </div>
+                    </div>
+                </div> -->
+                <a href="/courses/{{course.slug}}" class="stretched-link"></a>
+            </div>
+        </div>
+
+
+        {% endfor %}
 {% endif %}
