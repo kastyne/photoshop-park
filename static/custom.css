@@ -13,6 +13,16 @@ main {
 
 }
 
+nav {
+    position: absolute;
+}
+
+.discord {
+    background-color: #6d6e6d;
+    background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
+    background-repeat: repeat;
+}
+
 /**************************
  - Custom Featured Cards -
 ***************************/
