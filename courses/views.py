@@ -26,6 +26,6 @@ class LessonDetails(generic.base.TemplateView):
         current_course = Course.objects.get(slug=kwargs['course'])
 
         context['lesson'] = current_course.lessons.get(slug=kwargs['lesson'])
-        context['course'] = current_course
+        context['lessons'] = current_course.lessons.all()
 
         return context
