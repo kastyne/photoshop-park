@@ -309,11 +309,11 @@ hr#topbar {
 
     nav .menu {
         height: 100vh;
+        display: none;
     }
 
     nav .menu li {
         display: block;
-
         width: 100vw;
     }
 
