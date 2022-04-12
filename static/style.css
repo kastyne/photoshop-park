@@ -26,7 +26,6 @@ nav {
     height: 50px;
 
     overflow: hidden;
-    overflow-y: visible;
 
     width: 100%;
     position: sticky;
@@ -66,7 +65,7 @@ nav .brand img {
 
 }
 
-nav #hamburger, nav label[for="hamburger"] {
+#hamburger, nav label[for="hamburger"] {
     display: none;
 }
 
@@ -144,7 +143,7 @@ nav .menu li:hover {
 }
 
 .card header img {
-    width: 100%;
+    width: clamp(250px, 50vw, 450px);
     height: 300px;
     margin: 0;
     border-radius: 10px;
@@ -154,11 +153,7 @@ nav .menu li:hover {
 
 .card h1 {
     margin-bottom: 0px;
-}
-
-.link {
-    color: unset;
-    text-decoration: none;
+    width: clamp(250px, 50vw, 450px);
 }
 
 .flex {
@@ -313,7 +308,6 @@ hr#topbar {
     }
 
     nav .menu {
-        display: none;
         height: 100vh;
     }
 
@@ -321,7 +315,6 @@ hr#topbar {
         display: block;
 
         width: 100vw;
-        height: 32px;
     }
 
     nav label[for="hamburger"] {
@@ -334,15 +327,16 @@ hr#topbar {
         width: 16px;
     } 
 
-    nav #hamburger:checked {
-        display: none;
+    #hamburger:checked ~ nav {
+        height: 100vh;
     }
 
-    nav #hamburger:checked ~ label[for="hamburger"] {
+
+    #hamburger:checked ~ nav label[for="hamburger"] {
         content: "X";
     }
 
-    nav #hamburger:checked ~ .menu {
+    #hamburger:checked ~ nav .menu {
         display: block;
-    }    
+    }
 }
