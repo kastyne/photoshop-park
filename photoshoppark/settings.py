@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'tinymce',
 
     # Local apps
     'photoshoppark',
@@ -52,7 +53,7 @@ INSTALLED_APPS = [
     'blog',
     'courses',
     'users',
-    'artwork',
+    'artwork' ,
 ]
 
 SITE_ID = 1
