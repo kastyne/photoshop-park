@@ -154,3 +154,5 @@ cython_debug/
 # VSCode Config
 .vscode
 .code-workspace
+
+staticfiles/

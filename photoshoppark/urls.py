@@ -15,7 +15,8 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, includeg
+from markdownx import urls as markdownx
 
 admin.site.site_header = "Photoshop Park"
 admin.site.site_title = "Photoshop Park"
@@ -28,4 +29,3 @@ urlpatterns = [
     path('art/', include('artwork.urls')),
     path('admin/', admin.site.urls),
 ]
-
