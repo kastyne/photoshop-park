@@ -1,10 +1,6 @@
 /**********
  - Global -
 **********/
-:root {
-    --gradient: linear-gradient(45deg, rgba(9,3,103,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-}
-
 main {
     width: 80vw;
     height: calc(100vh - 50px);
@@ -13,15 +9,6 @@ main {
 
 }
 
-nav {
-    position: absolute;
-}
-
-.discord {
-    background-color: #6d6e6d;
-    background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
-    background-repeat: repeat;
-}
 
 /**************************
  - Custom Featured Cards -
@@ -82,14 +69,14 @@ nav {
 
 hr {
     width: 100%;
-    height: 50px;
+    height: 5px;
     margin: 25px 0px;
     padding: 0;
     border: none;
 }
 
 hr#topbar {
-    position: fixed; top: 0px; z-index: 5; margin: 0;
+    position: fixed; top: 0px; z-index: 2; margin: 0;
 }
 
 .gradient {

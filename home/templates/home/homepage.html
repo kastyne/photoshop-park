@@ -2,10 +2,9 @@
 
 {% block content %}
 
+<!-- for building purposes only -->
 <div class="contanier">
     
-    {% include 'artwork/art_list.html' %}
-
     <div class="jumbotron">
         <div class="container text-start ">
 
@@ -15,6 +14,7 @@
                     <p class="lead">The World's friendliest Photoshop community</p>
                     <span class="text-center d-inline-block">
                         <a class="btn btn-primary rounded-pill btn-lg w-100" href="#" role="button">JOIN FOR FREE</a>
+                        <p class="text-muted">Really, it's free, and community driven</p>
                     </span>
 
                 </div>
@@ -40,26 +40,41 @@
 
     <!-- Discord Invite -->
 
-    
-    <div class="container text-start full-bleed discord">
-        <div class="row d-flex align-items-center">
-            <div class="col-lg-6">
-                <h1 class="h1">Join Our Discord</h1>
-                <p class="lead">Make friends, help others, Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quidem incidunt culpa exercitationem iure architecto sunt vitae quasi cum, </p>
-                <a class="btn btn-primary rounded-pill btn-lg w-50" href="" role="button">JOIN SERVER</a>
-                </span>
+    <div class="discord full-bleed bg-info">
+        <div class="container text-start">
+
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="h1">Join Our Discord</h1>
+                    <p class="lead">Make friends, help others, Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quidem incidunt culpa exercitationem iure architecto sunt vitae quasi cum, </p>
+
+                    <a class="btn btn-primary rounded-pill btn-lg w-50" href="" role="button">JOIN SERVER</a>
+                    </span>
+                </div>
+
+                <div class="col-lg-6 align-items-center d-flex">
+                    <div class="featured-card border-0 rounded-0"><img
+                            src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                            class="img img-responsive"></div>
+                </div>
+            
             </div>
-            <div class="col-lg-6 align-items-center d-flex">
-                <div class="featured-card border-0 rounded-0"><img
-                        src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
-                        class="img img-responsive"></div>
-            </div>
-        
+
         </div>
     </div>
+
     <!-- Tutorials -->
-    {% include 'courses/course_list.html' %}
         
-</div>
+    {% include 'courses/course_list.html' %}
+</div> <!-- END OF container -->
+
+
+
+
+
+
+<!-- END OF for building purposes only -->
+
+
 {% endblock content %}

@@ -18,26 +18,30 @@
 </head>
 <body>
     <hr class="gradient" id="topbar">
-    <nav class="navbar navbar-light bg-light" id="navbar">
-        <a href="/" class="nav-brand">
-            <img src="{% static 'favicon.webp' %}" alt="" width="30" height="30" class="d-inline-block">
-            Photoshop Park
-        </a>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="/" class="nav-brand">
+                <img src="{% static 'favicon.webp' %}" alt="" width="30" height="30" class="d-inline-block">
+                Photoshop Park
+            </a>
 
-        <ul class="navbar-nav">
-            {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-            {% else %}
-                <li><a href="/login">Login</a></li>
-            {% endif %}
-            <li class="nav-item"><a class="nav-link  d-inline-block" href="/courses">Courses</a></li>
-            <li class="nav-item"><a class="nav-link  d-inline-block" href="/blog">Blog</a></li>
-            <li class="nav-item"><a class="nav-link  d-inline-block" href="/about">About</a></li>
-            <li class="nav-item"><a class="nav-link  d-inline-block" href="/contact">Contact Us</a></li>
-            {% if user.is_staff %}
-                <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
-            {% endif %}
-        </ul>
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+                {% else %}
+                    <li><a href="/login">Login</a></li>
+                {% endif %}
+
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/courses">Courses</a></li>
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/blog">Blog</a></li>
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/contact">Contact Us</a></li>
+
+                {% if user.is_staff %}
+                    <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
+                {% endif %}
+            </ul>
+        </div>
     </nav>
     <main>
         {% if messages %}
