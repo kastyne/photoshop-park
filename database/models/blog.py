@@ -25,6 +25,7 @@ STATUS = (
 
 class Category(models.Model):
     title = models.CharField(max_length=120)
+    image = models.URLField(blank=True)
 
     class Meta:
         verbose_name_plural = "Categories"
