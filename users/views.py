@@ -1,5 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
+
+from database.models.user import PsUser
 from .forms import UserRegisterationForm
 from django.contrib import messages
 from django.views import generic

@@ -9,7 +9,24 @@ main {
 
 }
 
+.popular-categories {
+    padding: 3rem 0 3rem 0;
+    background-color: navajowhite !important;
+    position: relative;
+    z-index: 1;
+}
 
+/*** Navbar ***/
+nav.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    background-color: green;
+}
 /**************************
  - Custom Featured Cards -
 ***************************/
@@ -53,6 +70,7 @@ main {
     width: 100vw;
     margin-left: 50%;
     transform: translateX(-50%);
+    position: relative;
 }
 
 .icon {
@@ -61,6 +79,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 /******************
@@ -75,9 +94,9 @@ hr {
     border: none;
 }
 
-hr#topbar {
-    position: fixed; top: 0px; z-index: 2; margin: 0;
-}
+/*hr#topbar {*/
+/*    position: fixed; top: 0px; z-index: 10; margin: 0;*/
+/*}*/
 
 .gradient {
     background: var(--gradient);
