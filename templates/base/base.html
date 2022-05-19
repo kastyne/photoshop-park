@@ -14,18 +14,18 @@
     {% block head %}
     {% endblock %}
 
-    <title>Photoshop Park {% block title %} {% endblock %}</title>
+    <title>Photoshop Park | {% block title %} {% endblock %}</title>
 </head>
 <body>
     <hr class="gradient" id="topbar">
-    <nav class="navbar navbar-light bg-light">
+    <nav class="sticky navbar navbar-light bg-light">
         <div class="container-fluid">
             <a href="/" class="nav-brand">
                 <img src="{% static 'favicon.webp' %}" alt="" width="30" height="30" class="d-inline-block">
                 Photoshop Park
             </a>
 
-            <ul class="navbar-nav">
+            <ul class="nav justify-content-end">
                 {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
                 {% else %}
