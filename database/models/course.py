@@ -7,8 +7,8 @@ class Course(models.Model):
     title = models.CharField(max_length=120)
     authors = models.ForeignKey(User, on_delete=models.CASCADE)
     description = models.CharField(max_length=240)
-    slug = models.CharField(max_length=120, default="")
-    image = models.URLField(blank=True)
+    slug = models.CharField(max_length=120, default='')
+    image = models.URLField(blank=True, default='https://image-cdn.essentiallysports.com/wp-content/uploads/2022-05-06T155027Z_1312978751_UP1EI561801C4_RTRMADP_3_TENNIS-MADRID.jpg?width=600')
 
     def __str__(self):
         return self.title
