@@ -1,12 +1,23 @@
 {% if course_list %}
     {% for course in course_list %}
-        <article class="card"><a class="link" href="/courses/{{course.slug}}">
-            <header>
-                <img src="{{course.image}}" alt="Course thumbnail">
-            </header>
-            <h1>{{course.title}}</h1>
-            <p>{{course.description}}</p>
-        </a></article>
+        <div class="col-3 d-flex align-self-stretch">
+        <div class="card shadow-sm mb-4">
+            <img class="card-img-top" src="{{ course.image }}" alt="Card image cap">
+            <div class="card-body">
+                <h3>{{course.title}}</h3>
+                <p class="card-text text-muted">{{course.description}}</p>
+
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center">
+                        <img src=" {{ course.authors.avatar }}" class="icon rounded-pill" alt="...">
+                        <div class="ms-2 c-details">
+                            <h6 class="mb-0 fw-bold">{{ course.authors }}</h6> <span class="text-muted">17 Feb 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
     {% endfor %}
 {% else %}
     <article>
