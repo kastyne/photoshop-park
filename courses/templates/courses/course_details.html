@@ -7,13 +7,14 @@
         <section class="hero-image" style="--img: url('{{course.image}}')">
             <div class="content">
                 <h1>{{course.title}}</h1>
-                <span class="author">By: {{course.authors}}</span>
+                <p class="description">{{course.description}}</p>
+                <span class="author">By: <a href="../../profile/{{course.authors}}">{{course.authors}}</a></span>
             </div>
         </section>
 
         {% include 'courses/lesson_list.html' %}
         
-        <p class="description">{{course.description}}</p>
+
         
         
 
