@@ -31,18 +31,20 @@ class LessonAdmin(admin.ModelAdmin):
    form = LessonAdminForm
 
    def save_model(self, request, obj, form, change):
-       original_lessons = obj.courses.all()
-       new_lessons = form.cleaned_data['lessons']
-       remove_qs = original_lessons.exclude(id__in=new_lessons.values('id'))
-       add_qs = new_lessons.exclude(id__in=original_lessons.values('id'))
+       super().save_model(request, obj, form, change)
 
+       original_lessons = set(obj.courses.values_list("id", flat=True))
+       current_lessons = set(map(lambda x: x.id, form.cleaned_data['courses']))
 
-       obj.save()   
+       if original_lessons != current_lessons:
+           add_to_course = current_lessons - original_lessons
+           for course_to_change in course.Course.objects.filter(id__in=add_to_course):
+                course_to_change.lesson.add(obj)
+           
+           remove_from_course = original_lessons - current_lessons
+           for course_to_change in course.Course.objects.filter(id__in=remove_from_course):
+            course_to_change.lesson.remove(obj)
 
-       for item in remove_qs:
-               obj.courses.remove(item)
-       for item in add_qs:
-               obj.courses.add(item)
 
 @admin.register(blog.Article)
 class BlogAdmin(admin.ModelAdmin):
