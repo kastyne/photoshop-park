@@ -21,7 +21,7 @@ class Lesson(models.Model):
 
 
 class Course(models.Model):
-    lesson = models.ManyToManyField(Lesson, related_name="courses")
+    lessons = models.ManyToManyField(Lesson, related_name="courses")
     title = models.CharField(max_length=120)
     authors = models.ForeignKey(User, on_delete=models.CASCADE)
     description = models.CharField(max_length=240)

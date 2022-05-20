@@ -21,11 +21,6 @@ class LessonAdminForm(forms.ModelForm):
         model = course.Lesson
         fields = ['title', 'authors', 'description', 'image', 'content']
 
-    def __init__(self, *args, **kwargs):
-        super(LessonAdminForm, self).__init__(*args, **kwargs)
-        if self.instance:
-            self.fields['courses'].initial = self.instance.courses.all()
-
 @admin.register(course.Lesson)
 class LessonAdmin(admin.ModelAdmin):
    form = LessonAdminForm
@@ -39,11 +34,11 @@ class LessonAdmin(admin.ModelAdmin):
        if original_lessons != current_lessons:
            add_to_course = current_lessons - original_lessons
            for course_to_change in course.Course.objects.filter(id__in=add_to_course):
-                course_to_change.lesson.add(obj)
+                course_to_change.lessons.add(obj)
            
            remove_from_course = original_lessons - current_lessons
            for course_to_change in course.Course.objects.filter(id__in=remove_from_course):
-            course_to_change.lesson.remove(obj)
+               course_to_change.lessons.remove(obj)
 
 
 @admin.register(blog.Article)
