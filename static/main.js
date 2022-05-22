@@ -35,7 +35,6 @@ let images = document.querySelectorAll('img').forEach(img => {
         wrapper.appendChild(figure)
 
         underlay.addEventListener('click', _ => {
-            console.log('g')
             wrapper.remove()
         }, {once: true})
 
