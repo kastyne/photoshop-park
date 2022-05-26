@@ -2,355 +2,142 @@
 
 {% block content %}
 
-<!-- for building purposes only -->
-<div class="contanier">
-    <div class="jumbotron">
-        <div class="container text-start ">
+    <!-- for building purposes only -->
+    <div class="container">
 
-            <div class="row d-flex align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="h1">Start Learning With</h1>
-                    <p class="lead">The World's friendliest Photoshop community</p>
-                    <span class="text-center d-inline-block">
+        <div class="jumbotron">
+            <div class="container text-start ">
+
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="h1">Start Learning With</h1>
+                        <p class="lead">The World's friendliest Photoshop community</p>
+                        <span class="text-center d-inline-block">
                         <a class="btn btn-primary rounded-pill btn-lg w-100" href="#" role="button">JOIN FOR FREE</a>
                         <p class="text-muted">Really, it's free, and community driven</p>
                     </span>
 
-                </div>
+                    </div>
 
-                <div class="col-lg-6 align-items-center d-flex">
-                    <div class="featured-card border-0 rounded-0"><img
-                            src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
-                            class="img img-responsive">
-                        <div class="featured-name">Example User 69</div>
+                    {#                <div class="col-lg-6 align-items-center d-flex">#}
+                    {#                    <div class="featured-card border-0 rounded-0"><img#}
+                    {#                            src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"#}
+                    {#                            class="img img-responsive">#}
+                    {#                        <div class="featured-name">Example User 69</div>#}
+                    {#                    </div>#}
+                    {#                </div>#}
+
+                    <div class="col-lg-6 align-items-center d-flex">
+                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://d2u3kfwd92fzu7.cloudfront.net/catalog/artwork/1471788/1423834882.7286_117_o.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://www.artnews.com/wp-content/uploads/2020/10/Hockney-David-Nichols-Canyon-1980-1-e1603722476949.jpeg?w=659" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://www.artnews.com/wp-content/uploads/2020/10/Hockney-David-Nichols-Canyon-1980-1-e1603722476949.jpeg?w=659" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Third slide label</h5>
+                                        <p>Some representative placeholder content for the third slide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
 
-    <div class="popular-categories">
-
-        <div class="row">
-
-            <h2 class="h2 text-center py-5">Popular Categories</h2>
-
-            <div class="col-8">
-
-                <div class="card border-0 rounded-0">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" style="height: 20.6rem"
-                        class="img" alt="..."> <!-- the inline style is a temp solution -->
-                    <div class="card-body">
-                        <h5 class="mb-0 text-uppercase fw-bold">Theory of Design</h5>
-                        <p class="text-muted">10 courses</p>
-                    </div>
-                </div>
-
+        <div class="popular-categories full-bleed">
+            <div class="container text-start">
+                {% include 'blog/category_list.html' %}
             </div>
-
-            <div class="col-4">
-
-                <div class="card border-0 rounded-0">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="mb-0 text-uppercase fw-bold">Retouching</h5>
-                        <p class="text-muted">32 courses</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-4">
-
-                <div class="card border-0 rounded-0">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="mb-0 text-uppercase fw-bold">Photoshop Fundamentals</h5>
-                        <p class="text-muted">4 courses</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-4">
-
-                <div class="card border-0 rounded-0">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="mb-0 text-uppercase fw-bold">You saw this on Instagram</h5>
-                        <p class="text-muted">67 courses</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-4">
-
-                <div class="card border-0 rounded-0">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="mb-0 text-uppercase fw-bold">Compositing</h5>
-                        <p class="text-muted">7 courses</p>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
-    </div>
 
-    <div class="discord full-bleed bg-info">
-        <div class="container text-start">
+        <div class="discord full-bleed bg-info">
+            <div class="container text-start">
 
-            <div class="row d-flex align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="h1">Join Our Discord</h1>
-                    <p class="lead">Make friends, help others, Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quidem incidunt culpa exercitationem iure architecto sunt vitae quasi cum, </p>
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="h1">Join Our Discord</h1>
+                        <p class="lead">Make friends, help others, Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Quidem incidunt culpa exercitationem iure architecto sunt vitae quasi cum, </p>
 
-                    <a class="btn btn-primary rounded-pill btn-lg w-50" href="#" role="button">JOIN SERVER</a>
-                    </span>
+                        <a class="btn btn-primary rounded-pill btn-lg w-50" href="#" role="button">JOIN SERVER</a>
+                    </div>
+
+                    <div class="col-lg-6 align-items-center d-flex">
+                        <div class="featured-card border-0 rounded-0"><img
+                                src = "https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+                                alt = "Friendly dog hypnotizing you to join"
+                                class = "img img-responsive"></div>
+                    </div>
 
                 </div>
 
-                <div class="col-lg-6 align-items-center d-flex">
-                    <div class="featured-card border-0 rounded-0"><img
-                            src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
-                            class="img img-responsive"></div>
-                </div>
             </div>
-
         </div>
-    </div>
 
-    <div class="recent-tutorials">
-        <div class="row pb-5">
 
-            <h2 class="h2 text-center py-5">Recent Tutorials</h2>
 
-            <div class="col-3">
+        <div class="recent-tutorials">
+            <div class="row pb-5">
 
-                <div class="card">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-uppercase fw-bold">Retouching</h5>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum ratione, possimus
-                            repudiandae error tempore dolores adipisci neque consectetur ex, exercitationem, autem
-                            labore! Optio, modi ducimus aut culpa fugiat nostrum harum!
-                        </p>
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
-                                    class="icon rounded-pill" alt="...">
-                                <div class="ms-2 c-details">
-                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">1 day ago</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h2 class="h2 text-center py-5">Courses</h2>
+                {% include 'courses/course_list.html' %}
 
             </div>
-
-            <div class="col-3">
-
-                <div class="card">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-uppercase fw-bold">Retouching</h5>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet reiciendis obcaecati, non nihil!</p>
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
-                                    class="icon rounded-pill" alt="...">
-                                <div class="ms-2 c-details">
-                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">02 Apr 2022</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-3">
-
-                <div class="card">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-uppercase fw-bold">Retouching</h5>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, aliquam. Sint harum optio at
-                            rae doloribus est, atque quisquam repellendus modi excepturi fuga! Ratione, sint magnam!</p>
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
-                                    class="icon rounded-pill" alt="...">
-                                <div class="ms-2 c-details">
-                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">17 Feb 2022</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-3">
-
-                <div class="card">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-uppercase fw-bold">Photoshop Fundamentals</h5>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti uis molestias facilis?
-                            Veniam eligendi esse fugit magni ullam quas sequi?</p>
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
-                                    class="icon rounded-pill" alt="...">
-                                <div class="ms-2 c-details">
-                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">13 Feb 2022</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
-        <div class="row pb-5">
-
-            <div class="col-3">
-
-                <div class="card">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-uppercase fw-bold">You saw this on Instagram</h5>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et velit libero voluptatum aperiam
-                            similique porro quae Enim incidunt minus aliquid et.</p>
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
-                                    class="icon rounded-pill" alt="...">
-                                <div class="ms-2 c-details">
-                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">04 May 2022</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-3">
-
-                <div class="card">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-uppercase fw-bold">Compositing</h5>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum obcaecati dolore eveniet,
-                            ssumenda reiciendis nesciunt adipisci sed dolorum vitae officiis labore, itaque cupiditate
-                            laudantium architecto nihil nemo minima minus!</p>
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
-                                    class="icon rounded-pill" alt="...">
-                                <div class="ms-2 c-details">
-                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">06 Jun 2022</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-3">
-
-                <div class="card">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-uppercase fw-bold">You saw this on Instagram</h5>
-                        <p class="text-muted">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sapiente eos officia,
-                            dolorum quis ratione optio placeat nt eligendi totam ad ullam, culpa quia fuga quae. Quasi.
-                        </p>
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
-                                    class="icon rounded-pill" alt="...">
-                                <div class="ms-2 c-details">
-                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">01 Feb 2022</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-3">
-
-                <div class="card">
-                    <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg" class="img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-uppercase fw-bold">Compositing</h5>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolorupiditate amet
-                            architecto minima, minus sequi temporibus fugiat aut optio dolores quasi ipsa harum quo.
-                            Optio, quo possimus.</p>
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                                <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
-                                    class="icon rounded-pill" alt="...">
-                                <div class="ms-2 c-details">
-                                    <h6 class="mb-0 fw-bold">Good Boi</h6> <span class="text-muted">24 May 2022</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
 
 
 
-</div> <!-- END OF container -->
+    </div> <!-- END OF container -->
 
 
 
 
 
 
-<!-- END OF for building purposes only -->
+    <!-- END OF for building purposes only -->
 
 
 
 
 
 
-<!-- {% include 'artwork/art_list.html' %}  -->
+    <!-- {% include 'artwork/art_list.html' %}  -->
 
 
 
 
 
 
-<!-- <h1>Course list:</h1>
+    <!-- <h1>Course list:</h1>
 <section class="flex">
     {% include 'courses/course_list.html' %}  
 </section>  -->
-
-
-{% include 'blog/category_list.html' %}
 {% endblock content %}

@@ -11,9 +11,9 @@
             </div>
         </section>
 
-        {% with lessons=lesson.course.lessons.all %}
-            {% include 'courses/lesson_list.html' %}
-        {% endwith %}
+{#        {% with lessons=lesson.course.lessons.all %}#}
+{#            {% include 'courses/lesson_list.html' %}#}
+{#        {% endwith %}#}
         
         <p class="description">{{lesson.content}}</p>
     </article>

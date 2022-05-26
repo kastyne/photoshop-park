@@ -7,40 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="{% static 'favicon.webp' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.css" integrity="sha512-3eoKq7cU6gdVeT+6eL40YcJLD8dxzQmOK54qxUWVjg7H4NN3u5AA5k5ywrqLV15hOZDBBgdQH/GK5CA9MwDVwg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'custom.css' %}">
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script  defer src="{% static 'main.js' %}"></script>
 
     {% block head %}
     {% endblock %}
 
-    <title>Photoshop Park {% block title %} {% endblock %}</title>
+    <title>Photoshop Park | {% block title %} {% endblock %}</title>
 </head>
 <body>
     <hr class="gradient" id="topbar">
-    <nav id="navbar">
-        
-        <a href="/" class="link brand"><img src="{% static 'favicon.webp' %}" alt="Photoshop Park Logo"><h1>Photoshop Park</h1></a>
+    <nav class="sticky navbar navbar-light bg-light" id="navbar">
+        <div class="container-fluid">
+            <a href="/" class="nav-brand">
+                <img src="{% static 'favicon.webp' %}" alt="" width="30" height="30" class="d-inline-block">
+                Photoshop Park
+            </a>
 
-        <input type="checkbox" id="hamburger">
-        <label for="hamburger">&#9776;</label>
-        
-        <ul class="menu">
-            {% if user.is_authenticated %}
-                <li><a href="/profile">Profile</a></li>
-            {% else %}
-                <li><a href="/login">Login</a></li>
-            {% endif %}
+            <ul class="nav justify-content-end">
+                {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+                {% else %}
+                    <li><a href="/login">Login</a></li>
+                {% endif %}
 
-            <li><a href="/courses">Courses</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-            
-            {% if user.is_staff %}
-                <li><a href="/admin">Admin</a></li>
-            {% endif %}
-        </ul>
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/courses">Courses</a></li>
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/blog">Blog</a></li>
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link  d-inline-block" href="/contact">Contact Us</a></li>
+
+                {% if user.is_staff %}
+                    <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
+                {% endif %}
+            </ul>
+        </div>
     </nav>
     <main>
         {% if messages %}
@@ -48,9 +52,8 @@
                 <p class="messages {{ message.tags }}">{{ message }}</p> <!-- Custom messages depending on message tag for future -->
             {% endfor %}
         {% endif %}
+
         {% block content %}
         {% endblock %}
     </main>
-
-    <script src="{% static 'main.js' %}"></script>
 </body>
