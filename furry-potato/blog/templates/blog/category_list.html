@@ -1,8 +1,0 @@
-{% for category in categories %}
-{% with category.articles.all as article_list %}
-<div class="row">
-    <h2>{{category.title}}</h2>
-    {% include 'blog/article_list.html' %}
-</div>
-{% endwith %}
-{% endfor %}
