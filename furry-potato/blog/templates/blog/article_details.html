@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block title %} {{article.title}} {% endblock %}
+
+{% block content %}
+    <section class="hero-image" style="--img: url({{article.image}})">
+        <div class="content">
+            <h1>{{article.title}}</h1>
+            <span>{{article.description}}</span><br>
+            <span class="author">By: {{article.authors}}</span>
+        </div>
+    </section>
+
+    <article class="article-content">
+        {{article.content}}
+    </article>
+{% endblock %}

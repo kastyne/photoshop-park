@@ -1,0 +1,15 @@
+{% if article_list %}
+{% for article in article_list %}
+
+
+<div class="card border-0 rounded-0">
+    <img src="{{category.image}}" style="height: 20.6rem" class="img">
+    <div class="card-body">
+        <h5 class="mb-0 text-uppercase fw-bold">{{category.title}}</h5>
+
+        <a class="stretched-link" href="/blog/{{category.slug}}"></a>
+    </div>
+</div>
+
+{% endfor %}
+{% endif %}
