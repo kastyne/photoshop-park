@@ -1,0 +1,14 @@
+{% if lessons %}
+            <ul class="progress-list">
+                {% for lesson in lessons %}
+                    <li>
+                        <a href="/courses/{{course.slug}}/{{lesson.slug}}" class="link">
+                            <h2>{{lesson.title}}</h2>
+                            <p>{{lesson.description}}</p>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h2>No lessons available now</h2>
+{% endif %}
