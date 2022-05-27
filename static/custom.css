@@ -1,98 +1,73 @@
 /**********
- - Global -
+ - global -
 **********/
+
 main {
-    width: 80vw;
-    height: calc(100vh - 50px);
-    margin: auto;
-    margin-top: 50px;
+  max-width: 150rem;
+}
 
+a:hover {
+  text-decoration:underline black;
 }
 
 
-/**************************
- - Custom Featured Cards -
-***************************/
 
-
-.featured-card {
-    max-width: 100%;
-    background-color: #FFF;
-    background-position: center;
-    overflow: hidden;
-    position: relative;
-    margin: 10px auto;
-    cursor: pointer;
-
-}
-
-.featured-card img {
-    filter: grayscale(15%);
-}
-
-.featured-card .featured-name {
+.filters a:hover::before, .filters a.active::before {
+    content: "";
     position: absolute;
-    left: 2rem;
-    bottom: 4rem;
-    font-size: 3rem;
-    color: #FFF;
-    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    font-weight: bold;
-    transition: all linear .25s;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    height: 1px;
+    background-color: #000;
 }
 
-.featured-card:hover img {
-    filter: none;
+/**********
+ - cards -
+**********/
+
+.item .item-wrap::after {
+  z-index: 2;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s all ease-in-out;
 }
 
-.featured-card:hover .featured-name {
-    bottom: 5rem;
+.item .item-wrap:hover::after {
+  opacity: 0;
+  visibility: hidden;
 }
 
-.full-bleed {
-    width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
+/*************
+ - homepage -
+*************/
+
+.discord {
+  background-color: rgb(52,145,255, 0.1);
 }
 
-.icon {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.filters a {
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
 }
 
-/******************
- - Gradient Bars -
-******************/
-
-hr {
-    width: 100%;
-    height: 5px;
-    margin: 25px 0px;
-    padding: 0;
-    border: none;
-}
-
-hr#topbar {
-    position: fixed; top: 0px; z-index: 2; margin: 0;
-}
-
-.gradient {
-    background: var(--gradient);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+.filters a:hover::before, .filters a.active::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    height: 1px;
+    background-color: #000;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% load static %}
     <meta charset="UTF-8">
@@ -7,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="{% static 'favicon.webp' %}" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'custom.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../static/custom.css">
 
 
     {% block head %}
@@ -16,20 +18,21 @@
 
     <title>Photoshop Park {% block title %} {% endblock %}</title>
 </head>
+
 <body>
     <hr class="gradient" id="topbar">
-    <nav class="navbar navbar-light bg-light">
+    <!-- <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <a href="/" class="nav-brand">
                 <img src="{% static 'favicon.webp' %}" alt="" width="30" height="30" class="d-inline-block">
-                Photoshop Park
+                Photoshop
             </a>
 
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
                 {% else %}
-                    <li><a href="/login">Login</a></li>
+                <li><a href="/login">Login</a></li>
                 {% endif %}
 
                 <li class="nav-item"><a class="nav-link  d-inline-block" href="/courses">Courses</a></li>
@@ -38,16 +41,18 @@
                 <li class="nav-item"><a class="nav-link  d-inline-block" href="/contact">Contact Us</a></li>
 
                 {% if user.is_staff %}
-                    <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
                 {% endif %}
             </ul>
         </div>
-    </nav>
+    </nav> -->
+    <div class="bg-dark py-2">&nbsp;</div>
     <main>
         {% if messages %}
-            {% for message in messages %}
-                <p class="messages {{ message.tags }}">{{ message }}</p> <!-- Custom messages depending on message tag for future -->
-            {% endfor %}
+        {% for message in messages %}
+        <p class="messages {{ message.tags }}">{{ message }}</p>
+        <!-- Custom messages depending on message tag for future -->
+        {% endfor %}
         {% endif %}
 
         {% block content %}
