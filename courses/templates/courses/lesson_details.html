@@ -3,18 +3,18 @@
 {% block title %} {{lesson.title}} {% endblock %}
 
 {% block content %}
-    <article>
-        <section class="hero-image" style="--img: url({{lesson.image}})">
-            <div class="content">
-                <h1>{{lesson.title}}</h1>
-                <span class="author">By: {{lesson.authors}}</span>
-            </div>
-        </section>
+<article>
+    <section class="hero-image" style="--img: url({{lesson.image}})">
+        <div class="content">
+            <h1>{{lesson.title}}</h1>
+            <span class="author">By: {{lesson.authors}}</span>
+        </div>
+    </section>
 
-        {% with lessons=lesson.course.lessons.all %}
-            {% include 'courses/lesson_list.html' %}
-        {% endwith %}
-        
-        <p class="description">{{lesson.content}}</p>
-    </article>
+    {# {% with lessons=lesson.course.lessons.all %}#}
+    {# {% include 'courses/lesson_list.html' %}#}
+    {# {% endwith %}#}
+
+    <p class="description">{{lesson.content}}</p>
+</article>
 {% endblock %}
