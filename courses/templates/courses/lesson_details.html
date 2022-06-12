@@ -15,6 +15,6 @@
 {#            {% include 'courses/lesson_list.html' %}#}
 {#        {% endwith %}#}
         
-        <p class="description">{{lesson.content}}</p>
+        <p class="description">{{lesson.content | safe}}</p>
     </article>
 {% endblock %}

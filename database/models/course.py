@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from tinymce import models as tinymce_models
 from database.models.user import PsUser as User
 
 
@@ -10,7 +11,7 @@ class Lesson(models.Model):
     created_on = models.DateField(auto_now_add=True)
     slug = models.CharField(max_length=120, default="")
     image = models.URLField(blank=True)
-    content = models.TextField(default="")
+    content = tinymce_models.HTMLField()
 
     def __str__(self):
         return self.title
