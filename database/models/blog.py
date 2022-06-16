@@ -2,6 +2,7 @@ from django.template.defaultfilters import slugify
 from django.contrib.syndication.views import Feed
 from database.models.user import PsUser
 from django.db import models
+from tinymce import models as tinymce_models
 
 
 class BlogFeed(Feed):
@@ -51,7 +52,7 @@ class Article(models.Model):
     created_on = models.DateField(auto_now_add=True)
 
     description = models.CharField(max_length=240)
-    content = models.TextField()
+    content = tinymce_models.HTMLField()
 
     class Meta:
         ordering = ['-created_on']
