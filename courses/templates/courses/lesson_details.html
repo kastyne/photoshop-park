@@ -3,7 +3,6 @@
 {% block title %} {{lesson.title}} {% endblock %}
 
 {% block content %}
-    <article>
         <section class="hero-image" style="--img: url({{lesson.image}})">
             <div class="content">
                 <h1>{{lesson.title}}</h1>
@@ -14,7 +13,6 @@
 {#        {% with lessons=lesson.course.lessons.all %}#}
 {#            {% include 'courses/lesson_list.html' %}#}
 {#        {% endwith %}#}
-        
-        <p class="description">{{lesson.content | safe}}</p>
-    </article>
+        <div id="toc"></div>
+        <div class="content"> {{lesson.content | safe}} </div>
 {% endblock %}
