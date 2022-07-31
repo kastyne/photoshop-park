@@ -42,3 +42,56 @@ let images = document.querySelectorAll('img').forEach(img => {
 
     })
 })
+
+let tableOfContents = document.querySelector('#toc')
+let articleHeadings = document.querySelectorAll(`
+    div.content h1,
+    div.content h2,
+    div.content h3,
+    div.content h4,
+    div.content h5,
+    div.content h6
+`)
+
+if (tableOfContents && articleHeadings.length >=2) {
+
+    let tocList = document.createElement('ul')
+    articleHeadings.forEach( (heading, i) => {
+        if (!heading.id) {
+            heading.id = "articleHeading" + i
+        }
+
+        let tocElement = document.createElement('li')
+        let tocLink = document.createElement('a')
+
+        tocLink.href = "#" + heading.id
+        tocLink.innerText = heading.innerText
+
+        tocElement.appendChild(tocLink)
+        tocList.appendChild(tocElement)
+    })
+
+    tableOfContents.appendChild(tocList)
+}
+
+/* tried doing some fancy nesting stuff, it didnt work anyway
+let tocSubheadings = document.createElement('ul')
+
+        let level = Number(heading.tagName[-1]) // naming stujf is hard
+
+        tocSubheadings.class = "tocLevel" + level
+        tocLink.href = "#" + heading.id
+        tocLink.innerText = heading.innerText
+
+        tocElement.appendChild(tocLink)
+        tocElement.appendChild(tocSubheadings)
+
+        if (level == 1) {
+            tocList.appendChild(tocElement)
+        } else {
+            let parent = tocList.querySelector('.tocLevel' + (level + 1) + ":last-of-type" )
+            console.log(parent)
+            if (parent) parent.appendChild(tocElement)
+            else tocList.append(tocElement)
+        }
+*/
