@@ -16,10 +16,10 @@ class Artwork(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        print(self.image.__dict__)
         self.slug = slugify(self.title)
         super(Artwork, self).save(*args, **kwargs)
 
+        # get cloudinary (hosting) url and save to url
         if self.url == '':
             self.url = str(f'https://res.cloudinary.com/dhnyjvjec/image/upload/{self.image.public_id}')
             self.save()

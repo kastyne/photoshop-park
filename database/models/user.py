@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-
+# Custom user class because we need enrollments and avatars
 class PsUser(AbstractUser):
     username = models.CharField(max_length=64, default='', unique=True)
     avatar = models.URLField(blank=True, default='https://i.scdn.co/image/ab6761610000e5ebfd30ebd7e80dad6b2383aab0')

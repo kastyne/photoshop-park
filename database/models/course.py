@@ -18,6 +18,7 @@ class Lesson(models.Model):
     def __str__(self):
         return self.title
 
+    # Automaticly generate slugs on save, admin field also comes prefilled
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Lesson, self).save(*args, **kwargs)
@@ -36,6 +37,7 @@ class Course(models.Model):
     def __str__(self):
         return self.title
 
+    # autogen slugs again
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Course, self).save(*args, **kwargs)
@@ -46,7 +48,7 @@ class CourseListView(ListView):
     template_name = 'courses/course_list.html'
     objects = Course.objects.order_by('-title')[3:]
 
-
+# Enrollment joining table for the many to many and also progress tracking!
 class Enrollment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="courses")
     course = models.ForeignKey(Course, on_delete=models.CASCADE)

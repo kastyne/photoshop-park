@@ -20,7 +20,7 @@ def delete_queryset(self, request, queryset):
 
     print('==========================delete_queryset==========================')
 
-
+# Customize the form in the admin site
 @admin.register(course.Course)
 class CourseAdmin(admin.ModelAdmin):
     list_display = ('title', 'authors')
@@ -28,7 +28,7 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
 
-
+# Allow lessons to be members of multipule courses
 class LessonAdminForm(forms.ModelForm):
     courses = forms.ModelMultipleChoiceField(
         queryset=course.Course.objects.all(),
@@ -43,7 +43,7 @@ class LessonAdminForm(forms.ModelForm):
         if self.instance and self.instance._state.adding is False:
             self.fields['courses'].initial = self.instance.courses.all()
 
-
+# all this work because the lesson list is stored on the course
 @admin.register(course.Lesson)
 class LessonAdmin(admin.ModelAdmin):
     form = LessonAdminForm
@@ -87,5 +87,5 @@ class CategoryAdmin(admin.ModelAdmin):
 class PsUserAdmin(admin.ModelAdmin):
     list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'date_joined')
 
-
+# TODO: Move this to a field on user + course
 admin.site.register(course.Enrollment)

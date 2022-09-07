@@ -34,7 +34,7 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
-
+# needs to be a function because of django wierdness
 def get_default_category():
     return Category.objects.get_or_create(title="Uncategorized")[0].id
 
