@@ -52,28 +52,18 @@ def signin(request):
             return redirect('homepage')
             # Redirect to a success page.
         else:
-            # Return an 'invalid login' error message.
-            ...
-    else:
-        return
+            # Return an 'invalid login' error message
+            pass
 
     return
 
 
 def profile(request, username=None):
-    if username:
-        user = PsUser.objects.get(username=username)
-    else:
-        user = request.user
-
-    if user == request.user:
-        me = True
-    else:
-        me = False
+    user = PsUser.object.get(username=username) if username else request.user
 
     return render(request, 'users/profile.html', {
         'current_user': user,
-        'me': me,
+        'me': user == request.user,
         'art_list': Artwork.objects.filter(authors=user.id).all(),
         'courses': user.enrollment.all()
     })

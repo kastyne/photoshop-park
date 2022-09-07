@@ -16,7 +16,7 @@ class ArtworkDetails(generic.base.TemplateView):
         context = super().get_context_data(**kwargs)
         author = PsUser.objects.get(username=kwargs['username'])
 
-        context['author'] = author
         context['piece'] = author.artwork.get(slug=kwargs['artwork'])
+        context['author'] = author
 
         return context

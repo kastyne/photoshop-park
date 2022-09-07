@@ -8,7 +8,7 @@ def homepage(request):
     art_list = artwork.Artwork.objects.all()
     articles = blog.Article.objects.all()
 
-    return render(request, 'home/homepage.html', {
+    return render(request, 'home/homepage.html', { # passes varibles to template file
         'courses': courses,
         'categories': categories,
         'art_list': art_list,
