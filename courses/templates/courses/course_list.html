@@ -1,28 +1,22 @@
-{% if course_list %}
-{% for course in course_list %}
-<div class="col-3 d-flex align-self-stretch">
-    <div class="card shadow-sm mb-4">
-        <img class="card-img-top" src="{{ course.image }}" alt="Card image cap">
-        <div class="card-body">
-            <h3>{{course.title}}</h3>
-            <p class="card-text text-muted">{{course.description}}</p>
-            <a class="stretched-link" href="/courses/{{course.slug}}"></a>
+{% if courses %}
+    {% for course in courses %}
 
-            <div class="d-flex justify-content-between">
-                <div class="d-flex flex-row align-items-center">
-                    <img src=" {{ course.authors.avatar }}" class="icon rounded-pill" alt="...">
-                    <div class="ms-2 c-details">
-                        <h6 class="mb-0 fw-bold">{{ course.authors }}</h6> <span class="text-muted">17 Feb 2022</span>
-                    </div>
+        <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="courses/{{ course.slug }}" class="item-wrap">
+                <img class="img-fluid" src="{{ course.image }}">
+                <div>
+                    <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">{{ course.title }}</h4>
+                    <span class="text-dark">{{ course.description }}</span>
+                    <br>
+                    <span class="text-muted">{{ course.lessons.count }} lessons</span>
                 </div>
-            </div>
+            </a>
         </div>
-    </div>
-</div>
-{% endfor %}
+
+    {% endfor %}
 {% else %}
-<article>
-    <h1>No courses right now</h1>
-    <p>Please come back later!</p>
-</article>
+    <article>
+        <h1>No courses right now</h1>
+        <p>Please come back later!</p>
+    </article>
 {% endif %}

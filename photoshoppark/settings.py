@@ -14,7 +14,14 @@ import os
 import tinymce
 from os import path
 from pathlib import Path
+import cloudinary
 
+cloudinary.config(
+    cloud_name="dhnyjvjec",
+    api_key="716832686671773",
+    api_secret="bTdHNghHKL5Q91vBAouQE046yKE",
+    secure=True
+)
 
 dotenv.load_dotenv()
 
@@ -27,6 +34,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
 
+RECAPTCHA_PUBLIC_KEY = '6LcfNbkhAAAAAG2y5Bu_0Z8r2Umja4WRXj8XIKxy'
+RECAPTCHA_PRIVATE_KEY = '6LcfNbkhAAAAALnMHQjwnsXkLy87-tWL2U_X9Fis'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -36,7 +46,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'tinymce',
+    'cloudinary',
+    'crispy_forms',
     'database',
+    'captcha',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,6 +67,18 @@ INSTALLED_APPS = [
     'users',
     'artwork',
 ]
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'theme_advanced_toolbar_location': "top",
+    'theme_advanced_toolbar_align': "left",
+    'skin': "o2k7",
+    "file_browser_callback": "CustomFileBrowser",
+}
+
+TINYMCE_FILEBROWSER = False
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 SITE_ID = 1
 

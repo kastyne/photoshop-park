@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.views.generic import ListView
 from tinymce import models as tinymce_models
 from database.models.user import PsUser as User
 
@@ -10,7 +11,8 @@ class Lesson(models.Model):
     description = models.CharField(max_length=240)
     created_on = models.DateField(auto_now_add=True)
     slug = models.CharField(max_length=120, default="")
-    image = models.URLField(blank=True)
+    image = models.URLField(
+        default="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-photos-of-cats-cuddling-1593203046.jpg")
     content = tinymce_models.HTMLField()
 
     def __str__(self):
@@ -37,6 +39,12 @@ class Course(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Course, self).save(*args, **kwargs)
+
+
+class CourseListView(ListView):
+    model = Course
+    template_name = 'courses/course_list.html'
+    objects = Course.objects.order_by('-title')[3:]
 
 
 class Enrollment(models.Model):

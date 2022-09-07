@@ -16,3 +16,4 @@ class DraftList(generic.ListView):
 class ArticleDetails(generic.DetailView):
     model = Article
     template_name = 'blog/article_details.html'
+

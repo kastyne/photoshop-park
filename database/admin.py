@@ -4,6 +4,23 @@ from django.contrib.admin.widgets import FilteredSelectMultiple
 from database.models import course, blog, user, artwork
 
 
+def delete_queryset(self, request, queryset):
+    print('==========================delete_queryset==========================')
+    print(queryset)
+
+    """
+    you can do anything here BEFORE deleting the object(s)
+    """
+
+    queryset.delete()
+
+    """
+    you can do anything here AFTER deleting the object(s)
+    """
+
+    print('==========================delete_queryset==========================')
+
+
 @admin.register(course.Course)
 class CourseAdmin(admin.ModelAdmin):
     list_display = ('title', 'authors')
@@ -46,6 +63,9 @@ class LessonAdmin(admin.ModelAdmin):
             for course_to_change in course.Course.objects.filter(id__in=remove_from_course):
                 course_to_change.lessons.remove(obj)
 
+    class Media:
+        js = ('tinyInject.js',)
+
 
 @admin.register(blog.Article)
 class BlogAdmin(admin.ModelAdmin):
@@ -53,6 +73,9 @@ class BlogAdmin(admin.ModelAdmin):
     list_filter = ('authors', 'status')
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
+
+    class Media:
+        js = ('tinyInject.js',)
 
 
 @admin.register(blog.Category, artwork.Artwork)

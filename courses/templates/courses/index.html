@@ -1,11 +1,11 @@
 {% extends 'base/base.html' %}
 
-{% block content %}
-<section class="flex">
-    <div class="row pb-5">
+{% block title %}Courses{% endblock title %}
 
-        <h2 class="h2 text-center py-5">Courses</h2>
-        {% include 'courses/course_list.html' %}
-    </div>
-</section>
+{% block content %}
+    <section class="flex">
+        <div class="row pb-5">
+            {% include 'courses/course_list.html' %}
+        </div>
+    </section>
 {% endblock content %}

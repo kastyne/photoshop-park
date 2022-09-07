@@ -1,5 +1,7 @@
 {% extends 'base/base.html' %}
 
+{% block title %}Home{% endblock title %}
+
 {% block content %}
 
 <!-- Jumbotron -->
@@ -14,7 +16,7 @@
                     <h1 class="h1">Start Learning With</h1>
                     <p class="lead">The World's friendliest Photoshop community</p>
 
-                    <a class="btn btn-primary rounded-pill btn-lg w-50" href="" role="button">JOIN FOR FREE</a>
+                    <a class="btn btn-primary rounded-pill btn-lg w-50" href="/register" role="button">JOIN FOR FREE</a>
                     <p class="text-muted">Really, it's free, and community driven</p>
                 </div>
 
@@ -29,7 +31,6 @@
     </div>
 </div>
 
-</div>
 
 <!-- Popular categories -->
 
@@ -37,57 +38,58 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 mt-4 mb-5">
-                <h2 class="text-center">Popular Categories</h2>
+                <h2 class="text-center">Popular Courses</h2>
             </div>
         </div>
         <div id="popular-categories" class="row no-gutter">
-            <div class="item col-sm-6 col-md-4 col-lg-8 mb-4">
-                <a href="#" class="item-wrap">
-                    <img class="img-fluid" src="../../static/imgs/ph_1.png">
-                    <div>
-                        <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Theory of Design</h3>
-                            <span class="text-dark">10 Lessons</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">
-                <a href="#" class="item-wrap">
-                    <img class="img-fluid" src="../../static/imgs/ph_2.png">
-                    <div>
-                        <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Retouching</h3>
-                            <span class="text-dark">6 Lessons</span>
-                    </div>
-                </a>
-            </div>
-            <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">
-                <a href="#" class="item-wrap">
-                    <img class="img-fluid" src="../../static/imgs/ph_3.png">
-                    <div>
-                        <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Photoshop fundamentals</h3>
-                            <span class="text-dark">56 Lessons</span>
-                    </div>
-                </a>
-            </div>
-            <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">
-                <a href="#" class="item-wrap">
-                    <img class="img-fluid" src="../../static/imgs/ph_4.png">
-                    <div>
-                        <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">You saw this on instagram
-                            </h3>
-                            <span class="text-dark">26 Lessons</span>
-                    </div>
-                </a>
-            </div>
-            <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">
-                <a href="#" class="item-wrap">
-                    <img class="img-fluid" src="../../static/imgs/ph_5.png">
-                    <div>
-                        <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Compositing</h3>
-                            <span class="text-dark">3 Lessons</span>
-                    </div>
-                </a>
-            </div>
+              {% include 'courses/course_list.html' %}
+{#            <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">#}
+{#                <a href="#" class="item-wrap">#}
+{#                    <img class="img-fluid" src="../../static/imgs/ph_3.png">#}
+{#                    <div>#}
+{#                        <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Theory of Design</h3>#}
+{#                            <span class="text-dark">10 Lessons</span>#}
+{#                    </div>#}
+{#                </a>#}
+{#            </div>#}
+{##}
+{#            <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">#}
+{#                <a href="#" class="item-wrap">#}
+{#                    <img class="img-fluid" src="../../static/imgs/ph_2.png">#}
+{#                    <div>#}
+{#                        <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Retouching</h3>#}
+{#                            <span class="text-dark">6 Lessons</span>#}
+{#                    </div>#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">#}
+{#                <a href="#" class="item-wrap">#}
+{#                    <img class="img-fluid" src="../../static/imgs/ph_3.png">#}
+{#                    <div>#}
+{#                        <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Photoshop fundamentals</h3>#}
+{#                            <span class="text-dark">56 Lessons</span>#}
+{#                    </div>#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">#}
+{#                <a href="#" class="item-wrap">#}
+{#                    <img class="img-fluid" src="../../static/imgs/ph_4.png">#}
+{#                    <div>#}
+{#                        <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">You saw this on instagram#}
+{#                            </h3>#}
+{#                            <span class="text-dark">26 Lessons</span>#}
+{#                    </div>#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">#}
+{#                <a href="#" class="item-wrap">#}
+{#                    <img class="img-fluid" src="../../static/imgs/ph_5.png">#}
+{#                    <div>#}
+{#                        <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Compositing</h3>#}
+{#                            <span class="text-dark">3 Lessons</span>#}
+{#                    </div>#}
+{#                </a>#}
+{#            </div>#}
         </div>
     </div>
 </section>
@@ -138,120 +140,7 @@
             </div>
         </div>
         <div id="recent-lessons" class="row no-gutter">
-
-            <div class="item col-sm-6 col-md-4 col-lg-3 mb-4">
-                <a href="#" class="">
-                    <img class="img-fluid" src="../../static/imgs/ph_7.png">
-                    <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Lesson title</h4>
-                </a>
-                <div>
-                    <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reiciendis
-                        amet reprehenderit voluptate
-                        minus nobis totam omnis mollitia magnam, voluptatibus maiores saepe odio error dicta at magni
-                        repellat sint est.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="item col-sm-6 col-md-4 col-lg-3 mb-4">
-                <a href="#" class="">
-                    <img class="img-fluid" src="../../static/imgs/ph_7.png">
-                    <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Lesson title</h4>
-                </a>
-                <div>
-                    <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reiciendis
-                        amet reprehenderit voluptate
-                        minus nobis totam omnis mollitia magnam, voluptatibus maiores saepe odio error dicta at magni
-                        repellat sint est.
-                    </p>
-                </div>
-
-            </div>
-            <div class="item col-sm-6 col-md-4 col-lg-3 mb-4">
-                <a href="#" class="">
-                    <img class="img-fluid" src="../../static/imgs/ph_7.png">
-                    <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Lesson title</h4>
-                </a>
-                <div>
-                    <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reiciendis
-                        amet reprehenderit voluptate
-                        minus nobis totam omnis mollitia magnam, voluptatibus maiores saepe odio error dicta at magni
-                        repellat sint est.
-                    </p>
-                </div>
-
-            </div>
-            <div class="item col-sm-6 col-md-4 col-lg-3 mb-4">
-                <a href="#" class="">
-                    <img class="img-fluid" src="../../static/imgs/ph_7.png">
-                    <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Lesson title</h4>
-                </a>
-                <div>
-                    <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reiciendis
-                        amet reprehenderit voluptate
-                        minus nobis totam omnis mollitia magnam, voluptatibus maiores saepe odio error dicta at magni
-                        repellat sint est.
-                    </p>
-                </div>
-
-            </div>
-            <div class="item col-sm-6 col-md-4 col-lg-3 mb-4">
-                <a href="#" class="">
-                    <img class="img-fluid" src="../../static/imgs/ph_7.png">
-                    <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Lesson title</h4>
-                </a>
-                <div>
-                    <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reiciendis
-                        amet reprehenderit voluptate
-                        minus nobis totam omnis mollitia magnam, voluptatibus maiores saepe odio error dicta at magni
-                        repellat sint est.
-                    </p>
-                </div>
-
-            </div>
-            <div class="item col-sm-6 col-md-4 col-lg-3 mb-4">
-                <a href="#" class="">
-                    <img class="img-fluid" src="../../static/imgs/ph_7.png">
-                    <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Lesson title</h4>
-                </a>
-                <div>
-                    <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reiciendis
-                        amet reprehenderit voluptate
-                        minus nobis totam omnis mollitia magnam, voluptatibus maiores saepe odio error dicta at magni
-                        repellat sint est.
-                    </p>
-                </div>
-
-            </div>
-            <div class="item col-sm-6 col-md-4 col-lg-3 mb-4">
-                <a href="#" class="">
-                    <img class="img-fluid" src="../../static/imgs/ph_7.png">
-                    <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Lesson title</h4>
-                </a>
-                <div>
-                    <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reiciendis
-                        amet reprehenderit voluptate
-                        minus nobis totam omnis mollitia magnam, voluptatibus maiores saepe odio error dicta at magni
-                        repellat sint est.
-                    </p>
-                </div>
-
-            </div>
-            <div class="item col-sm-6 col-md-4 col-lg-3 mb-4">
-                <a href="#" class="">
-                    <img class="img-fluid" src="../../static/imgs/ph_7.png">
-                    <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">Lesson title</h4>
-                </a>
-                <div>
-                    <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reiciendis
-                        amet reprehenderit voluptate
-                        minus nobis totam omnis mollitia magnam, voluptatibus maiores saepe odio error dicta at magni
-                        repellat sint est.
-                    </p>
-                </div>
-
-            </div>
+            {% include 'blog/article_list.html' %}
         </div>
     </div>
 </section>
@@ -284,6 +173,6 @@
 
 
 <section class="flex">
-    {% include 'courses/course_list.html' %}
+{#    {% include 'courses/course_list.html' %}#}
 </section> -->
 {% endblock content %}

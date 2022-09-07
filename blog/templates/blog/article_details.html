@@ -22,12 +22,12 @@
                 <!-- content -->
                 <!-- i simulate longer format with repeated calls, but this should be one thing when launched -->
                 <section class="mb-5">
-                    {{article.content}}
+                    {{article.content | safe}}
                 </section>
 
                 <!-- content w quote effect-->
                 <blockquote class="mb-5">
-                    {{article.content}}
+                    {{article.content | safe}}
                 </blockquote>
 
                 <section class="mb-5">
@@ -37,7 +37,7 @@
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Deutscher_Sch%C3%A4ferhund-_portrait.JPG/800px-Deutscher_Sch%C3%A4ferhund-_portrait.JPG"
                             alt="..." />
                     </figure>
-                    {{article.content}}
+                    {{article.content | safe}}
                 </section>
             </article>
             <!-- comments -->

@@ -1,15 +1,79 @@
 {% extends 'base/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 {% block title %} Register {% endblock %}
 
 {% block content %}
-    <h1>Register your account</h1>
-    <p>You will get a free cake!</p>
-    <p>Have an account already? <a href="{% url 'login' %}">Log in</a></p>
 
+    
+<div class="stylebg" style="--url: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg')"></div>
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <img class="col-sm-1 col-md-1 col-lg-1" src="https://cdn-icons-png.flaticon.com/512/883/883787.png">
+                </div>
 
+                <div class="row justify-content-md-center">
+                    <div class="card col-lg-4"
+                         style="width: 36rem; border-radius:5px; background-color: rgba(255, 255, 255, 0.6);">
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <h2>Join Photoshop Park</h2>
+                                <p class="text-center">Self-paced Photoshop learning for everyone, for free.
+                                    Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+                            </div>
+
+                            {#                            {% for field in form.fields %}#}
+                            {#                            <div class="row justify-content-center">#}
+                            {#                                <div class="col-md-12">#}
+                            {#                                    <div class="font-weight-bold">#}
+                            {#                                    {{ field }}#}
+                            {#                                    </div>#}
+                            {#                                </div>#}
+                            {#                            </div>#}
+                            {#                            {% endfor %}#}
+                            <div class="row justify-content-center">
+                                <div class="col-md-12">
+                                    <div class="font-weight-bold">
+                                        {{ form.username | as_crispy_field }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-12">
+                                    <div class="font-weight-bold">
+                                        {{ form.email | as_crispy_field }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-12">
+                                    <div class="font-weight-bold">
+                                        {{ form.password1 | as_crispy_field }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-12">
+                                    <div class="font-weight-bold">
+                                        {{ form.password2 | as_crispy_field }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                {{ form.captcha }}
+
+                            </div>
+                            <br>
+                            <div class="row justify-content-center">
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                            {#                        <p class="mb-6">Something about myself!</p>#}
+                        </div>
+                    </div>
+                </div>
+            </div>
     </form>
 {% endblock %}

@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 python-dotenv = "*"
 django-tinymce = "*"
+cloudinary = "*"
+django-crispy-forms = "*"
+django-recaptcha = "*"
 
 [dev-packages]
 

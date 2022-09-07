@@ -2,8 +2,12 @@
  - global -
 **********/
 
-main {
-  max-width: 150rem;
+main.navActive {
+  padding-top: 50px;
+}
+
+nav {
+  transition: .2s;
 }
 
 a:hover {
@@ -96,4 +100,14 @@ blockquote {
     bottom: 0;
     height: 1px;
     background-color: #000;
+}
+
+.stylebg {
+  height: 100vh;
+  width: 100vw;
+  
+  position: fixed;
+
+  background: var(--url);
+  background-size: cover;
 }
