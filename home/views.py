@@ -3,16 +3,11 @@ from django.shortcuts import render
 
 
 def homepage(request):
-    courses = course.CourseListView.objects.all()
-    categories = blog.Category.objects.all()
-    art_list = artwork.Artwork.objects.all()
-    articles = blog.Article.objects.all()
-
     return render(request, 'home/homepage.html', { # passes varibles to template file
-        'courses': courses,
-        'categories': categories,
-        'art_list': art_list,
-        'articles': articles
+        'courses': course.Course.objects.all()[3:], # First 3 most popular courses
+        'categories': blog.Category.objects.all(),
+        'art_list': artwork.Artwork.objects.all(),
+        'articles': blog.Article.objects.all()
     })
 
 

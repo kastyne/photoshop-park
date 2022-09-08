@@ -1,13 +1,10 @@
 from database.models.course import Course, Lesson
 from django.views import generic
 
-
 class CourseList(generic.ListView):
     model = Course
-    queryset = Course.objects.all()
-    template_name = 'courses/index.html'
-    context_object_name = 'courses'
-
+    template_name = 'courses/course_list.html'
+    objects = Course.objects.order_by('-title')[3:]
 
 class CourseDetails(generic.DetailView):
     model = Course

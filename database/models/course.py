@@ -42,12 +42,6 @@ class Course(models.Model):
         self.slug = slugify(self.title)
         super(Course, self).save(*args, **kwargs)
 
-
-class CourseListView(ListView):
-    model = Course
-    template_name = 'courses/course_list.html'
-    objects = Course.objects.order_by('-title')[3:]
-
 # Enrollment joining table for the many to many and also progress tracking!
 class Enrollment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="courses")
