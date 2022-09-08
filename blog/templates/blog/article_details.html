@@ -11,7 +11,7 @@
             <header class="mb-4">
                 <h1 class="h1 mb-1">{{article.title}}</h1>
                 <div class="text-muted fst-italic mb-2">Posted on January 1, 2022 by {{article.authors}}</div>
-                <a class="badge bg-primary text-decoration-none text-light mb-3" href="#!">Category Title</a>
+                <a class="badge bg-primary text-decoration-none text-light mb-3" href="/blog/categories/{{ article.category.title }}">{{ article.category.title }}</a>
                 <!-- replace src with url -->
                 <figure class="mb-4"><img class="img-fluid"
                         src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*"
@@ -40,16 +40,16 @@
                     {{article.content | safe}}
                 </section>
             </article>
-            <!-- comments -->
+            <!-- comments
             <section class="mb-5">
                 <div class="card bg-light">
                     <div class="card-body">
-                        <!-- if looged in: form-->
+                        <!-- if looged in: form
                         <form class="mb-4"><textarea class="form-control" rows="3"
                                 placeholder="Join the discussion and leave a comment!"></textarea></form>
-                        <!-- nested comments-->
+                        <!-- nested comments
                         <div class="d-flex mb-4">
-                            <!-- Parent comment-->
+                            <!-- Parent comment
                             <div class="flex-shrink-0"><img class="rounded-circle avatar-comment"
                                     src="https://i.scdn.co/image/ab6761610000e5ebfd30ebd7e80dad6b2383aab0" alt="..." />
                             </div>
@@ -60,7 +60,7 @@
                                 and is characterized by an upturning tail. The dog is derived from an ancient, extinct
                                 wolf,[6][7] and the modern wolf
                                 is the dog's nearest living relative
-                                <!-- Child comment 1-->
+                                <!-- Child comment 1
                                 <div class="d-flex mt-4">
                                     <div class="flex-shrink-0"><img class="rounded-circle avatar-comment"
                                             src="https://i.scdn.co/image/ab6761610000e5ebfd30ebd7e80dad6b2383aab0"
@@ -76,7 +76,7 @@
                                         canids.[11]
                                     </div>
                                 </div>
-                                <!-- Child comment 2-->
+                                <!-- Child comment 2
                                 <div class="d-flex mt-4">
                                     <div class="flex-shrink-0"><img class="rounded-circle avatar-comment"
                                             src="https://i.scdn.co/image/ab6761610000e5ebfd30ebd7e80dad6b2383aab0"
@@ -97,7 +97,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Single comment-->
+                        <!-- Single comment
                         <div class="d-flex">
                             <div class="flex-shrink-0"><img class="rounded-circle avatar-comment"
                                     src="https://i.scdn.co/image/ab6761610000e5ebfd30ebd7e80dad6b2383aab0" alt="..." />
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
         </div>
 
 
