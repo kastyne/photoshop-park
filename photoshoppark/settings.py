@@ -23,13 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
 
-RECAPTCHA_PUBLIC_KEY = os.environ['RECAPTCHA_PUBLIC_KEY']
-RECAPTCHA_PRIVATE_KEY = os.environ['RECAPTCHA_PRIVATE_KEY']
+if 'RECAPTCHA_PUBLIC_KEY' in os.environ: RECAPTCHA_PUBLIC_KEY = os.environ['RECAPTCHA_PUBLIC_KEY']
+if 'RECAPTCHA_PRIVATE_KEY' in os.environ: RECAPTCHA_PRIVATE_KEY = os.environ['RECAPTCHA_PRIVATE_KEY']
+if 'ALLOWED_HOSTS' in os.environ: ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = not ('PRODUCTION' in os.environ and os.environ['PRODUCTION'])
 
-ALLOWED_HOSTS = []
 
 # Application definition
 
