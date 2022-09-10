@@ -5,7 +5,7 @@
 
 {% block content %}
 
-    
+
 <div class="stylebg" style="--url: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg')"></div>
     <form method="POST">
         {% csrf_token %}
@@ -23,16 +23,6 @@
                                 <p class="text-center">Self-paced Photoshop learning for everyone, for free.
                                     Already have an account? <a href="{% url 'login' %}">Log in</a></p>
                             </div>
-
-                            {#                            {% for field in form.fields %}#}
-                            {#                            <div class="row justify-content-center">#}
-                            {#                                <div class="col-md-12">#}
-                            {#                                    <div class="font-weight-bold">#}
-                            {#                                    {{ field }}#}
-                            {#                                    </div>#}
-                            {#                                </div>#}
-                            {#                            </div>#}
-                            {#                            {% endfor %}#}
                             <div class="row justify-content-center">
                                 <div class="col-md-12">
                                     <div class="font-weight-bold">
@@ -70,7 +60,6 @@
                             <div class="row justify-content-center">
                                 <button type="submit" class="btn btn-primary">Register</button>
                             </div>
-                            {#                        <p class="mb-6">Something about myself!</p>#}
                         </div>
                     </div>
                 </div>

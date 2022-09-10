@@ -15,7 +15,7 @@
                     &#9658; <a href="#">{{ article.title }}</a></div>
                 <!-- replace src with url -->
                 <figure class="mb-4"><img class="img-fluid"
-                        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*"
+                        src="{{ article.image }}"
                         alt="..." />
                 </figure>
             </header>
@@ -25,92 +25,6 @@
                 <section class="mb-5">
                     {{article.content | safe}}
                 </section>
-
-                <!-- content w quote
-                <blockquote class="mb-5">
-                    {{article.content | safe}}
-                </blockquote>
-
-                <section class="mb-5">
-                    <h2 class=" h2">{{article.title}}</h2>
-                    {{article.content}}
-                    <figure class="my-4"><img class="img-fluid"
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Deutscher_Sch%C3%A4ferhund-_portrait.JPG/800px-Deutscher_Sch%C3%A4ferhund-_portrait.JPG"
-                            alt="..." />
-                    </figure>
-                    {{article.content | safe}}
-                </section>
-            </article> -->
-            <!-- comments
-            <section class="mb-5">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <!-- if looged in: form
-                        <form class="mb-4"><textarea class="form-control" rows="3"
-                                placeholder="Join the discussion and leave a comment!"></textarea></form>
-                        <!-- nested comments
-                        <div class="d-flex mb-4">
-                            <!-- Parent comment
-                            <div class="flex-shrink-0"><img class="rounded-circle avatar-comment"
-                                    src="https://i.scdn.co/image/ab6761610000e5ebfd30ebd7e80dad6b2383aab0" alt="..." />
-                            </div>
-                            <div class="mx-3">
-                                <div class="fw-bold">Commenter Name</div>
-                                The dog or domestic dog (Canis familiaris[4][5] or Canis lupus familiaris[5]) is a
-                                domesticated descendant of the wolf,
-                                and is characterized by an upturning tail. The dog is derived from an ancient, extinct
-                                wolf,[6][7] and the modern wolf
-                                is the dog's nearest living relative
-                                <!-- Child comment 1
-                                <div class="d-flex mt-4">
-                                    <div class="flex-shrink-0"><img class="rounded-circle avatar-comment"
-                                            src="https://i.scdn.co/image/ab6761610000e5ebfd30ebd7e80dad6b2383aab0"
-                                            alt="..." /></div>
-                                    <div class="mx-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                        he dog was the first species to be domesticated,[9][8] by hunter–gatherers over
-                                        15,000 years ago,[7] before the
-                                        development of agriculture.[1] Due to their long association with humans, dogs
-                                        have expanded to a large number of
-                                        domestic individuals[10] and gained the ability to thrive on a starch-rich diet
-                                        that would be inadequate for other
-                                        canids.[11]
-                                    </div>
-                                </div>
-                                <!-- Child comment 2
-                                <div class="d-flex mt-4">
-                                    <div class="flex-shrink-0"><img class="rounded-circle avatar-comment"
-                                            src="https://i.scdn.co/image/ab6761610000e5ebfd30ebd7e80dad6b2383aab0"
-                                            alt="..." /></div>
-                                    <div class="mx-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                        The dog has been selectively bred over millennia for various behaviors, sensory
-                                        capabilities, and physical
-                                        attributes.[12] Dog breeds vary widely in shape, size, and color. They perform
-                                        many roles for humans, such as hunting,
-                                        herding, pulling loads, protection, assisting police and the military,
-                                        companionship, therapy, and aiding disabled
-                                        people. Over the millennia, dogs became uniquely adapted to human behavior, and
-                                        the human-canine bond has been a topic
-                                        of frequent study.[13] This influence on human society has given them the
-                                        sobriquet of "man's best friend".[14]
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single comment
-                        <div class="d-flex">
-                            <div class="flex-shrink-0"><img class="rounded-circle avatar-comment"
-                                    src="https://i.scdn.co/image/ab6761610000e5ebfd30ebd7e80dad6b2383aab0" alt="..." />
-                            </div>
-                            <div class="mx-3">
-                                <div class="fw-bold">Commenter Name</div>
-                                Canis is the Latin word meaning "dog"
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
         </div>
 
 
