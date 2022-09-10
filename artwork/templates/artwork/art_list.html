@@ -1,13 +1,18 @@
 {% if artworks %}
+  <div class="row">
     {% for artwork in artworks %}
-        <article class="card"><a class="link" href="/art/{{ artwork.authors }}/{{ artwork.slug }}">
-            <header>
-                <img src="{{ artwork.url }}" alt="Art Piece">
-            </header>
-            <h1>{{ artwork.title }}</h1>
-            <span class="author">By:{{ artwork.authors }}</span>
-        </a></article>
+      <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">
+          <a href="/art/{{ artwork.authors }}/{{ artwork.slug }}" class="item-wrap">
+              <img class="img-fluid" src="{{ artwork.url }}">
+              <div>
+                  <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">{{ artwork.title }}</h4>
+                  <span class="text-dark">By: {{ artwork.authors }}</span>
+                  <br>
+              </div>
+          </a>
+      </div>
     {% endfor %}
+  </div>
 {% else %}
     <article>
         <h1>No artwork right now</h1>

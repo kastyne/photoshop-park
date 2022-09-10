@@ -11,14 +11,13 @@
                 <header class="mb-4">
                     <h1 class="h1 mb-1">{{ lesson.title }}</h1>
                     <div class="text-muted fst-italic mb-2">Posted By: {{ lesson.authors }}</div>
-                    <a class="badge bg-primary text-decoration-none text-light mb-3" href="#">Category Title</a>
+                    <div class="text-muted fst-italic mb-2"><a href="/">Main page</a> &#9658; <a href="/courses">Courses</a>
+                        &#9658; <a href="/courses/{{ course.slug }}">{{course.title}}</a>  &#9658; <a href="/courses/{{ course.slug }}/{{ lesson.slug }}">{{ lesson.slug }}</a></div>
                     <!-- replace src with url -->
-                    {% if lesson.image != 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-photos-of-cats-cuddling-1593203046.jpg' %}
                         <figure class="mb-4"><img class="img-fluid"
                                                   src="{{ lesson.image }}"
                                                   alt="..."/>
                         </figure>
-                    {% endif %}
                 </header>
                 <article class="col-lg-8 mx-auto">
                     <!-- content -->

@@ -1,5 +1,10 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-    {% include 'blog/category_list.html' %}
+  <div class="col-10" style="margin: auto; margin-top: 2vw">
+    {% for category in categories %}
+      {% with articles=category.articles.all %}
+        {% include 'blog/article_list.html' %}
+      {% endwith %}
+    {% endfor %}
 {% endblock %}

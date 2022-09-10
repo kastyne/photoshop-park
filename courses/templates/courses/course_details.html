@@ -9,28 +9,21 @@
             <!-- header-->
             <header class="mb-4">
                 <h1 class="h1 mb-1">{{course.title}}</h1>
+                <span class="author">By: <a href="/profile/{{course.authors}}">{{course.authors}}</a></span>
+                <p class="description">{{course.description}}</p>
                 <div class="text-muted fst-italic mb-2"><a href="/">Main page</a> &#9658; <a href="/courses">Courses</a>
                     &#9658; <a href="#">{{course.title}}</a></div>
                 <!-- replace src with url -->
-                <figure class="mb-4"><img class="img-fluid" src="https://i.ytimg.com/vi/vdJSy1KB5t0/maxresdefault.jpg"
+                <figure class="mb-4"><img class="img-fluid" width="100%" src="{{ course.image }}"
                         alt="..." />
                 </figure>
-                <p class="description">{{course.description}}</p>
-                <span class="author">By: <a href="/profile/{{course.authors}}">{{course.authors}}</a></span>
             </header>
 
         </div>
 
 
     </div>
-</div>
-
-
     {% include 'courses/lesson_list.html' %}
-
-
-
-
-
+</div>
 </article>
 {% endblock %}

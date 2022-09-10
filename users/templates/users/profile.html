@@ -2,26 +2,21 @@
 {% block title %} Profile {% endblock %}
 
 {% block content %}
-    <h1>{{ currUser.username }}!</h1>
-    
+    <h1 class="display-3 col-12" style="text-align: center">{{ current_user.username }}'s artwork!</h1>
+
     {% if me %}
         <a href="/logout">Logout</a>
     {% endif %}
-    
-    <p>This is a desolate land.</p>
 
-    <hr class="gradient">
-
-    <h1>Your Artwork</h1>
-    <section class="flex">
+    {% with artworks=current_user.artwork.all %}
+      <section class="col-10" style="margin: auto">
         {% include 'artwork/art_list.html' %}
-    </section>
-    
-    <hr class="gradient">
-    
+      </section>
+    {% endwith %}
+    <!--
     <h1>Enrolled Courses</h1>
     <section class="flex">
         {% include 'courses/course_list.html' %}
     </section>
-
+    -->
 {% endblock %}

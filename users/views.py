@@ -9,19 +9,6 @@ from database.models.course import Course
 from database.models.user import PsUser
 
 
-def addcourse(request):
-    if request.method == 'POST':
-        if username:
-            user = PsUser.objects.get(username=username)
-        else:
-            user = request.user
-
-        if user == request.user:
-            me = True
-        else:
-            me = False
-
-
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
@@ -59,7 +46,7 @@ def signin(request):
 
 
 def profile(request, username=None):
-    user = PsUser.object.get(username=username) if username else request.user
+    user = PsUser.objects.get(username=username) if username else request.user
 
     return render(request, 'users/profile.html', {
         'current_user': user,

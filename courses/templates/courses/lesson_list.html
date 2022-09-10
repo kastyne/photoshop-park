@@ -1,14 +1,18 @@
 {% if lessons %}
-    <ul class="progress-list">
+      <div class="row">
         {% for lesson in lessons %}
-            <li>
-                <a href="/courses/{{ course.slug }}/{{ lesson.slug }}" class="link">
-                    <h2>{{ lesson.title }}</h2>
-                    <p>{{ lesson.description }}</p>
+            <div class="item col-sm-6 col-md-4 col-lg-4 mb-4">
+                <a href="/courses/{{ course.slug }}/{{ lesson.slug }}" class="item-wrap">
+                    <img class="img-fluid" src="{{ lesson.image }}">
+                    <div>
+                        <h4 class="text-uppercase font-weight-bold text-dark mb-0 mt-1">{{ lesson.title }}</h4>
+                        <span class="text-dark">{{ lesson.description }}</span>
+                        <br>
+                    </div>
                 </a>
-            </li>
+            </div>
         {% endfor %}
-    </ul>
+      </div>
 {% else %}
     <h2>No lessons available now</h2>
 {% endif %}

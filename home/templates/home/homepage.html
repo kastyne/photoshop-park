@@ -1,5 +1,5 @@
 {% extends 'base/base.html' %}
-
+{% load static %}
 {% block title %}Home{% endblock title %}
 
 {% block content %}
@@ -14,16 +14,15 @@
             <div class="col-lg-6 p-5 d-flex justify-content-center">
                 <div>
                     <h1 class="h1">Start Learning With</h1>
-                    <p class="lead">The World's friendliest Photoshop community</p>
+                    <p class="lead">The World's Friendliest Photoshop Community</p>
 
                     <a class="btn btn-primary rounded-pill btn-lg w-50" href="/register" role="button">JOIN FOR FREE</a>
-                    <p class="text-muted">Really, it's free, and community driven</p>
                 </div>
 
             </div>
 
             <div class="col-lg-6 align-items-center d-flex">
-                <div class=""><img src="../../static/imgs/ph_8.png" class="img-fluid"></div>
+                <div class=""><img src="{% static 'imgs/ph_8.png' %}" class="img-fluid"></div>
             </div>
 
         </div>
@@ -43,7 +42,7 @@
         </div>
         <div id="popular-categories" class="row no-gutter">
               {% include 'courses/course_list.html' %}
-        </div>
+        </div
     </div>
 </section>
 
@@ -65,7 +64,7 @@
             </div>
 
             <div class="col-lg-6 align-items-center d-flex">
-                <div class=""><img src="../../static/imgs/ph_6.png" class="img-fluid"></div>
+                <div class=""><img src="{% static 'imgs/ph_6.png' %}" class="img-fluid"></div>
             </div>
 
         </div>
@@ -77,10 +76,11 @@
 
 <section class="section recent-lessons">
     <div class="container">
-        <div class="row align-items-center">
+        <!-- <div class="row align-items-center"> -->
             <div class="col-12 mt-4 mb-5">
-                <h2 class="text-center">Recent Lessons</h2>
+                <h2 class="text-center">Recent Blog Posts</h2>
             </div>
+            <!--
             <div class="col-12 text-center text-uppercase mb-4">
                 <div id="filters" class="filters">
                     <a href="#" data-filter="*" class="active">All</a>
@@ -91,41 +91,10 @@
                     <a href="#" data-filter=".compositing">Compositing</a>
                 </div>
             </div>
-        </div>
+        </div>-->
         <div id="recent-lessons" class="row no-gutter">
             {% include 'blog/article_list.html' %}
         </div>
     </div>
 </section>
-
-
-</div> <!-- END OF container -->
-
-
-</div> <!-- END OF container -->
-
-
-
-
-
-
-<!-- END OF for building purposes only -->
-
-
-
-
-
-
-<!-- {% include 'artwork/art_list.html' %}  -->
-
-
-
-
-
-
-
-
-<section class="flex">
-{#    {% include 'courses/course_list.html' %}#}
-</section> -->
 {% endblock content %}
