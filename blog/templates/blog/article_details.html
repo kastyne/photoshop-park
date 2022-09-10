@@ -11,7 +11,8 @@
             <header class="mb-4">
                 <h1 class="h1 mb-1">{{article.title}}</h1>
                 <div class="text-muted fst-italic mb-2">Posted on January 1, 2022 by {{article.authors}}</div>
-                <a class="badge bg-primary text-decoration-none text-light mb-3" href="/blog/categories/{{ article.category.title }}">{{ article.category.title }}</a>
+                <div class="text-muted fst-italic mb-2"><a href="/">Main page</a> &#9658; <a href="/blog">Blog</a>
+                    &#9658; <a href="#">{{ article.title }}</a></div>
                 <!-- replace src with url -->
                 <figure class="mb-4"><img class="img-fluid"
                         src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*"

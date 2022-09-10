@@ -16,10 +16,6 @@ class ArticleDetails(generic.DetailView):
     model = Article
     template_name = 'blog/article_details.html'
 
-class CategoryList(generic.ListView):
-    template_name = 'blog/category_list.html'
-    model = Category
-
 class CategoryDetails(generic.TemplateView):
     template_name = 'blog/category_details.html'
     def get_context_data(self, **kwargs):
